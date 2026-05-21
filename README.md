@@ -1,46 +1,53 @@
-# Astro Starter Kit: Basics
+# After Dark Studio — Landing site
 
-```sh
-npm create astro@latest -- --template basics
+This repository contains the landing page for After Dark Studio — a small, portfolio‑style site built with Astro (static) to present a rental‑friendly interior design service.
+
+Key features
+- Branded landing page with hero, services, pricing, FAQ and contact CTA
+- Responsive layouts and light/dark themed sections
+- Accessible accordions for process and FAQ
+
+Tech
+- Astro (static site) + Vite
+- Plain CSS (single `src/styles/global.css`)
+
+Getting started (local)
+1. Install dependencies
+```bash
+npm install
+```
+2. Start dev server (live reload)
+```bash
+npm run dev
+# Open http://localhost:4321
+```
+3. Build for production
+```bash
+npm run build
+```
+4. Preview the production build locally
+```bash
+npm run preview
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Project structure (important files)
+- `src/pages/index.astro` — home page and all sections
+- `src/layouts/Layout.astro` — shared header/footer and site shell
+- `src/styles/global.css` — design tokens and component styles
+- `src/assets/` — image assets and logos
 
-## 🚀 Project Structure
+Deployment
+- This is a static site. Deploy the contents of the `dist/` folder to any static host (GitHub Pages, Netlify, Vercel, etc.).
 
-Inside of your Astro project, you'll see the following folders and files:
+Notes
+- Contact form and CTAs point to a Google Form used for enquiries.
+- If you want me to wire up CI (GitHub Actions) or deploy to a specific provider, I can add a simple pipeline.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+Contributing
+- Small changes are welcome. Open a PR with a short description.
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+Contact
+- Email: Drishti9@gmail.com
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---
+Generated and edited in this workspace.
