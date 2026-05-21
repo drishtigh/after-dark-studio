@@ -1,0 +1,42 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+	pageTitle="Projects | Interior Design Studio"
+	pageDescription="A preview page for future interior design projects and case studies."
+>
+	<section class="page-card card">
+		<span class="pill">Projects</span>
+		<h1>Selected projects will live here.</h1>
+		<p>
+			This page is ready for before-and-after stories, room reveals, and case studies once you begin
+			collecting project photography.
+		</p>
+		<div class="button-row">
+			<a class="button button--primary" href="/">Back to home</a>
+			<a class="button button--secondary" href="/blog">Visit the blog</a>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.page-card {
+		margin-top: 3rem;
+		margin-bottom: 3rem;
+		padding: 2rem;
+		display: grid;
+		gap: 1rem;
+	}
+
+	h1 {
+		font-size: clamp(2.5rem, 5vw, 4.5rem);
+		max-width: 10ch;
+	}
+
+	p {
+		max-width: 58ch;
+		font-size: 1.05rem;
+		color: rgba(31, 41, 51, 0.82);
+	}
+</style>

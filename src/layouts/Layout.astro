@@ -1,23 +1,79 @@
+---
+import "../styles/global.css";
+import studioLogo from "../assets/Light BG_Logo.png";
+import studioNameBanner from "../assets/Light BG_Name.png";
+
+const {
+	pageTitle = "Interior Design Studio",
+	pageDescription = "Thoughtful interiors with warmth, texture, and a clear point of view.",
+	headerTheme = "light",
+} = Astro.props;
+---
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<meta name="description" content={pageDescription} />
+		<title>{pageTitle}</title>
 	</head>
-	<body>
-		<slot />
+	<body class={`site-body site-body--${headerTheme}`}>
+		<header class={`site-header site-header--${headerTheme}`}>
+			<div class="site-shell site-header__inner">
+				<a class="brand" href="/" aria-label="Home">
+					<img class="brand__mark" src={studioLogo.src} alt="After Dark Studio logo" width="48" height="48" />
+					<span class="brand__copy">
+						<img
+							class="brand__banner"
+							src={studioNameBanner.src}
+							alt="After Dark Studio"
+							width="220"
+							height="64"
+						/>
+					</span>
+				</a>
+
+				<nav class="site-nav" aria-label="Primary">
+					<a href="/">Home</a>
+					<a href="/projects">Projects (coming soon)</a>
+					<a href="/blog">Blog (coming soon)</a>
+					<a href="https://docs.google.com/forms/d/e/1FAIpQLScMhkQxJpi7S7oCcPvw5a082q0Zt38LkCtar3LjJriCU107GA/viewform" target="_blank" rel="noreferrer">Contact</a>
+				</nav>
+			</div>
+		</header>
+
+		<main>
+			<slot />
+		</main>
+
+		<section class="contact-cta" aria-label="First step and contact">
+			<div class="site-shell contact-cta__inner">
+				<div class="contact-cta__copy">
+					<h2>First step and contact</h2>
+					<p>The first step is simple: fill out the enquiry form. I’ll review your answers and let you know whether I’m a good fit for your space and what the next steps would be.</p>
+				</div>
+
+				<div class="contact-cta__actions">
+					<a class="button button--primary" href="https://docs.google.com/forms/d/e/1FAIpQLScMhkQxJpi7S7oCcPvw5a082q0Zt38LkCtar3LjJriCU107GA/viewform" target="_blank" rel="noreferrer">Enquiry form</a>
+					<a class="button button--ghost" href="mailto:Drishti9@gmail.com">Email</a>
+					<a class="button button--ghost" href="https://wa.me/85290543117" target="_blank" rel="noreferrer">WhatsApp</a>
+				</div>
+			</div>
+		</section>
+
+		<footer class="site-footer">
+			<div class="site-shell site-footer__inner">
+				<nav class="site-footer__nav">
+					<a href="/">Home</a>
+					<a href="/projects">Projects</a>
+					<a href="/blog">Blog</a>
+					<a href="https://docs.google.com/forms/d/e/1FAIpQLScMhkQxJpi7S7oCcPvw5a082q0Zt38LkCtar3LjJriCU107GA/viewform" target="_blank" rel="noreferrer">Enquiry form</a>
+				</nav>
+				<p>© {new Date().getFullYear()} After Dark Studio — All rights reserved.</p>
+			</div>
+		</footer>
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
