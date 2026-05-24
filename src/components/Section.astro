@@ -1,0 +1,45 @@
+---
+const { id, title } = Astro.props;
+
+---
+
+<section id={id} class="section">
+  {title && <h2>{title}</h2>}
+  <div class="section__inner">
+    <slot />
+  </div>
+</section>
+
+<style>
+  .section {
+    margin: 2.5rem 0;
+    padding: 1rem 0;
+  }
+
+  .section__inner {
+    max-width: 64ch;
+    margin: 0 auto;
+    display: block;
+    gap: 1rem;
+  }
+
+  .section > h2 {
+    margin-bottom: 0.75rem;
+    color: var(--heading);
+    font-size: clamp(1.25rem, 2.2vw, 1.5rem);
+  }
+
+  .section :is(.button) {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (max-width: 720px) {
+    .section__inner { padding: 0 1rem; }
+    .section :is(.button) { width: auto; }
+  }
+</style>

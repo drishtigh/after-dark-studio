@@ -1,9 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import img1 from "../assets/NYC home.jpeg";
-import img2 from "../assets/RIS_5668.JPG";
-import img3 from "../assets/hotel 3.jpg";
-import rentalPhoto from "../assets/WhatsApp Image 2025-03-13 at 2.32.28 PM(6).jpeg";
+import Hero from "../components/Hero.astro";
+import Section from "../components/Section.astro";
+import ProcessSteps from "../components/ProcessSteps.astro";
+import FAQAccordion from "../components/FAQAccordion.astro";
+// removed unused images for deleted sections
 import aboutPortrait from "../assets/Image_20260509161325_9_79.jpg";
 ---
 
@@ -12,323 +13,89 @@ import aboutPortrait from "../assets/Image_20260509161325_9_79.jpg";
 	pageDescription="After Dark Studio helps renters in Hong Kong turn temporary spaces into homes that work for real life."
 	headerTheme="dark"
 >
-	<section class="hero-hero site-shell" aria-label="Hero">
-		<div class="hero-hero__content">
-			<div class="hero-hero__copy">
-				<h1>Because even a one-year rental deserves a real home.</h1>
-				<p class="hero-hero__subheading">Your routines. Your rental. Planned on purpose.</p>
-				<p class="hero-hero__intro">
-					I help renters in Hong Kong, especially expats and young adults, turn “just a place to sleep” into a home that actually works for their real life, without renovations or big budgets.
-				</p>
-				<div class="button-row hero-hero__actions">
-					<a class="button button--primary" href="https://docs.google.com/forms/d/e/1FAIpQLScMhkQxJpi7S7oCcPvw5a082q0Zt38LkCtar3LjJriCU107GA/viewform" target="_blank" rel="noreferrer">Start with the enquiry form</a>
-					<a class="button button--secondary" href="#process">See how the service works ↓</a>
-				</div>
-			</div>
-		</div>
-	</section>
+	<div class="site-shell">
+		<Hero />
+	</div>
 
-	<section class="is-you-strip" aria-label="Is this you?">
-		<div class="site-shell is-you-strip__inner">
-			<h2 class="is-you-strip__heading">Is this you?</h2>
+	<Section id="is-this-you" title="Is this you?">
+		<div class="is-you-strip__inner">
+			<!-- Heading provided by Section wrapper; removed duplicate -->
 			<div class="is-you-strip__grid">
 				<ul>
-					<li>You rent a small flat in Hong Kong and it’s always felt a bit “temporary”, even if a part of you wants it to feel better.</li>
-					<li>You spend most of your non‑working hours there, but it still doesn’t feel like you.</li>
+					<li>You rent a small flat in Hong Kong and it’s always felt a bit temporary – so you’ve never fully set it up to <em>support</em> you.</li>
+					<li>You’re not a minimalist, but visual clutter and bad layout make you feel wired, tired or vaguely stressed at home.</li>
+					<li>You already own “enough stuff”, yet the space never quite works: counters attract piles, chairs collect clothes, the entry is always chaos.</li>
 				</ul>
 				<ul>
-					<li>You don’t want a renovation, just a space that flows better and doesn’t drain you.</li>
-					<li>You have furniture and stuff already, but it never seems to sit right.</li>
-					<li>You’re either waiting for a “real” home one day, or you’re about to move and want this next place to feel right from the beginning.</li>
+					<li>You don’t want to become a different person. You want your home and systems to make it <em>easier</em> to be the way you are and still feel “tidy enough”.</li>
+					<li>You care about waste and money – throwing everything out feels wrong, but you’re open to a few intentional additions if they really help your daily life.</li>
 				</ul>
 			</div>
-			<p class="is-you-strip__closing">If this sounds familiar, you’re exactly who I design for.</p>
+			<p class="is-you-strip__closing">If you’re nodding along, you’re exactly who I design for. The goal isn’t perfection. It’s a home that quietly supports how you really live.</p>
 		</div>
-	</section>
+	</Section>
 
-	<section class="what-does site-shell" aria-label="What After Dark Studio does">
-		<div class="what-does__grid">
-			<div class="what-does__copy card">
-				<span class="eyebrow">What After Dark Studio does</span>
-				<h2>I offer a two‑session, hands‑on interiors service for renters.</h2>
-				<p>If you’re already living in your flat, I come over, watch how you actually use it, and physically move things around to find a layout that fits your routines.</p>
-				<p>If you’re about to move in, we use your floor plan, photos and key furniture decisions to plan the layout before you settle in.</p>
-				<p>Then I give you a clear, simple plan and come back once more to help you set it up. We use mostly what you already own, plus a few targeted additions, often more lighting options and better storage, so your rental feels like it was planned for you, not just endured.</p>
-			</div>
-			<div class="what-does__media">
-				<div class="photo-grid">
-					<img src={img1.src} alt="Project photo 1" />
-					<img src={img2.src} alt="Project photo 2" />
-					<img src={img3.src} alt="Project photo 3" />
-				</div>
-			</div>
+	<Section id="what-i-do" title="What I actually do">
+		<div class="card">
+			<h3>Not a “buy everything new” service</h3>
+			<p>Most design services start with shopping lists. I start with what you already have.</p>
+			<p>After Dark Studio is for people who:</p>
+			<ul>
+				<li>don’t want to waste money or create more clutter, and</li>
+				<li>want their home to feel calmer and work better <em>before</em> they buy more.</li>
+			</ul>
+			<p>Together we will:</p>
+			<ul>
+				<li>re‑plan your layout and systems so your home fits how you really live,</li>
+				<li>rearrange and edit what you already own,</li>
+				<li>only add new pieces if they clearly solve a problem (light, storage, comfort) and can move with you.</li>
+			</ul>
+			<p>If you’re looking for a shopping buddy to redo everything from scratch, I’m probably not the right fit.</p>
 		</div>
-	</section>
+	</Section>
 
-	<section class="why-bother" aria-label="Why bother, if it’s just a rental?">
-		<div class="site-shell why-bother__inner">
-			<div class="why-bother__copy card">
-				<span class="eyebrow">Why bother, if it’s just a rental?</span>
-				<h2>A one-year lease can feel temporary but it’s still a full year of your life.</h2>
-				<p>
-					You wake up there, come home tired there, process big feelings there. When your flat doesn’t support you, you feel it every day, even if you think you’re “never home”. And even if you <em>do</em> care about how it looks, it can be hard to find the time, energy or clarity to turn it into a space that actually supports you.
-				</p>
-				<p>After Dark Studio is built on three beliefs:</p>
-				<ul class="why-bother__list">
-					<li><strong>Rentals are worth caring about.</strong> Even if you leave, the year you spend there still matters.</li>
-					<li><strong>Small changes can change how you feel.</strong> A better layout and the right lighting choices can calm your nervous system more than you expect.</li>
-					<li><strong>Your home should fit your real life.</strong> Not an ideal Pinterest version of you- you on a Tuesday night after work.</li>
-				</ul>
-			</div>
+	<ProcessSteps />
 
-			<figure class="why-bother__photo">
-				<img src={rentalPhoto.src} alt="A softly styled rental interior" />
-			</figure>
+	<Section id="investment" title="Investment">
+		<div class="card">
+			<p>I offer a focused, two‑session service for renters, creating micro‑solutions for your repeat problems – the chair that always collects clothes, the table that ends up buried, the corner you never use.</p>
+			<p>Most projects for a whole small flat (studio / 1–2 bed) land in the <strong>mid‑HKD 4,000s</strong>. Single‑room projects are lower.</p>
+			<p>On our free 15‑minute Home Fit Call, I’ll recommend the right option for your space and give you a clear quote before you decide.</p>
+			<p class="pricing-cta"><a class="button button--primary" href="https://docs.google.com/forms/d/e/1FAIpQLScMhkQxJpi7S7oCcPvw5a082q0Zt38LkCtar3LjJriCU107GA/viewform" target="_blank" rel="noreferrer">Share your flat details</a></p>
 		</div>
-	</section>
+	</Section>
 
-	<section class="about-section" aria-label="About After Dark Studio and Drishti">
-		<div class="site-shell about-section__inner">
+	<Section id="about" title="About">
+		<div class="about-section__inner">
 			<div class="about-section__copy card">
-				<span class="eyebrow">About</span>
-				<h2>About After Dark Studio (and me, Drishti)</h2>
-				<p>I’m Drishti, an interior and scenic designer based in Hong Kong. I’ve worked on a range of design projects from interiors to sets and my favourite part is always the same: <strong>spatial planning</strong>. Finding the exact place where a desk, a chair, or a lamp makes a room suddenly “click” for the person who lives there.</p>
-				<p>I’m comfortable getting hands-on moving furniture, testing layouts in real time, so this isn’t a moodboard-only service. It’s about making your rental feel like a visual expression of your personality, without turning it into a fragile showroom.</p>
-				<a class="about-section__link" href="http://drishtichauhandesign.com/" target="_blank" rel="noreferrer">See more of my previous design work →</a>
+				<h2>I’m Drishti – a spatial designer based in Hong Kong</h2>
+				<p>With a background in interior and scenic design for theatre, sets and installations, my favourite part has always been spatial planning – finding the exact placement of a bed, table or light that makes your body relax because the space finally works with you, not against you.</p>
+				<p>I’m less interested in buying new decor, and more interested in:</p>
+				<ul>
+					<li>how your body moves through your home,</li>
+					<li>what your nervous system needs to calm down, and</li>
+					<li>how to make everyday tasks feel lighter through layout and systems.</li>
+				</ul>
+				<p>I’ve designed everything from 7,500 sq ft penthouses to tiny rentals and theatre sets, and I bring that same level of care to your one‑year rental so it feels designed specifically for you, not just “good enough for now”.</p>
+				<p><a class="about-section__link" href="http://drishtichauhandesign.com/" target="_blank" rel="noreferrer">See more of my previous design work →</a></p>
 			</div>
 
 			<figure class="about-section__portrait">
 				<img src={aboutPortrait.src} alt="Portrait of Drishti" />
 			</figure>
 		</div>
-	</section>
+	</Section>
 
-	<section id="process" class="how-it-works">
-		<div class="site-shell how-it-works__inner">
-			<div class="how-it-works__intro">
-				<span class="eyebrow">How it works</span>
-				<h2>A focused, two-session process. No renovations, no endless revisions.</h2>
-				<p>
-					I usually work on the whole flat (however small), but it’s also possible to focus on just your private room or a shared living room. There will always be one main client and point of contact; if shared spaces are involved, I ask that everyone who uses them is aware and joins at least part of the first session so decisions feel fair.
-				</p>
-			</div>
+	<FAQAccordion />
 
-			<div class="timeline">
-				<details class="timeline__item">
-					<summary>
-						<span class="timeline__step">Step 1</span>
-						<span class="timeline__title">Tell me about your space (intake form)</span>
-					</summary>
-					<div class="timeline__content">
-						<p>You start with a short online form and a few photos of your space.</p>
-						<p>If you’re moving soon, you can share floor plans or agent photos instead. I’ll ask about:</p>
-						<ul>
-							<li>What’s frustrating you right now</li>
-							<li>How you actually live in the space (WFH, hosting, hobbies, sleep, etc.)</li>
-							<li>Your budget, restrictions as a renter, and anything you absolutely love or hate (no carpets? soft lighting only?)</li>
-						</ul>
-						<p>From this, I get a first sense of the mood, the constraints, and the main problems to solve.</p>
-						<a class="button button--secondary" href="https://docs.google.com/forms/d/e/1FAIpQLScMhkQxJpi7S7oCcPvw5a082q0Zt38LkCtar3LjJriCU107GA/viewform" target="_blank" rel="noreferrer">Fill in the form</a>
-					</div>
-				</details>
-
-				<details class="timeline__item">
-					<summary>
-						<span class="timeline__step">Step 2</span>
-						<span class="timeline__title">Session 1 — Walk-through & live rearranging</span>
-					</summary>
-					<div class="timeline__content">
-						<p><strong>If you’re already living in your flat</strong>, I visit your home and we walk through the space together.</p>
-						<p><strong>If you’re about to move in and don’t have access yet</strong>, we’ll do this session online, using your floor plan, photos and furniture list to test layouts and decisions in advance.</p>
-						<ul>
-							<li>Look at how you move, work, relax, and store things day to day</li>
-							<li>Talk about how you <em>want</em> the room to feel</li>
-							<li>Gently test 1–2 layout changes (for example, shifting the bed, defining a lounge corner, or rethinking the entryway)</li>
-							<li>Identify where storage should really live so daily clutter has a home</li>
-							<li>Decide on 3–5 high-impact changes that will make the biggest difference, within your budget</li>
-						</ul>
-						<p>You don’t need to have all the answers. My job is to observe, ask questions, and translate your routines and preferences into a space that feels like you.</p>
-					</div>
-				</details>
-
-				<details class="timeline__item">
-					<summary>
-						<span class="timeline__step">Step 3</span>
-						<span class="timeline__title">Your After Dark Plan (3–5 days later)</span>
-					</summary>
-					<div class="timeline__content">
-						<p>After the visit, I pull everything together into a simple, practical plan you can act on.</p>
-						<p>You’ll receive:</p>
-						<ul>
-							<li><strong>A layout suggestion</strong> — a simple sketch or marked-up photo showing where key pieces should go</li>
-							<li><strong>3–5 prioritized changes</strong> — from easy instant changes to small purchases and longer-term ideas</li>
-							<li><strong>A curated shopping list</strong> — renter-friendly items available in Hong Kong (e.g. IKEA, local shops, online options), matched to your budget</li>
-						</ul>
-						<p>This will be your personal design guide: clear enough to follow, flexible enough to adapt as your life changes.</p>
-					</div>
-				</details>
-
-				<details class="timeline__item">
-					<summary>
-						<span class="timeline__step">Step 4</span>
-						<span class="timeline__title">Session 2 — Setup & Styling</span>
-					</summary>
-					<div class="timeline__content">
-						<p>I will come back for a shorter second visit once your new pieces arrive.</p>
-						<p>In this session, we:</p>
-						<ul>
-							<li>Put furniture and storage into place</li>
-							<li>Adjust lighting, art, and styling details</li>
-							<li>Tweak the layout so it feels natural in real life</li>
-							<li>Capture a few before/after photos so you can see the transformation</li>
-						</ul>
-					</div>
-				</details>
-
-				<p class="how-it-works__ending">Two sessions mean you get a clear beginning and end: a focused process, a finished space, and no endless back-and-forth.</p>
-			</div>
-
-			<div class="how-it-works__cta card">
-				<p><strong>Ready to start?</strong> Fill in the enquiry form and I’ll take it from there.</p>
-				<a class="button button--primary" href="https://docs.google.com/forms/d/e/1FAIpQLScMhkQxJpi7S7oCcPvw5a082q0Zt38LkCtar3LjJriCU107GA/viewform" target="_blank" rel="noreferrer">Fill in the enquiry form</a>
-			</div>
+	<Section id="ready" title="Ready for a space that fits how you really live?">
+		<div class="card contact-cta">
+			<p><a class="button button--primary" href="https://docs.google.com/forms/d/e/1FAIpQLScMhkQxJpi7S7oCcPvw5a082q0Zt38LkCtar3LjJriCU107GA/viewform" target="_blank" rel="noreferrer">Book a free 15‑minute Home Fit Call →</a></p>
+			<p style="margin-top:0.75rem">Or WhatsApp me 3 photos: <a href="https://wa.me/85290543117" rel="noreferrer">+852 9054 3117</a></p>
 		</div>
+	</Section>
 
-		<script>
-			const timelineItems = Array.from(document.querySelectorAll('.timeline__item'));
 
-			timelineItems.forEach((item) => {
-				item.addEventListener('toggle', () => {
-					if (!item.open) {
-						return;
-					}
-
-					timelineItems.forEach((otherItem) => {
-						if (otherItem !== item) {
-							otherItem.open = false;
-						}
-					});
-				});
-			});
-		</script>
-	</section>
-
-	<section class="faq-section" aria-label="Frequently asked questions">
-		<div class="site-shell faq-section__inner">
-			<div class="faq-section__intro">
-				<span class="eyebrow">FAQ</span>
-				<h2>FAQ</h2>
-			</div>
-
-			<div class="faq-section__list">
-				<details class="faq-item">
-					<summary>Q: I live with a partner / roommates. Can we still do this?</summary>
-					<div class="faq-item__content">
-						<p>A: Yes. There will always be one main client and point of contact, but I’m happy to work in homes with more than one person. If we’re working on <strong>shared spaces</strong> (like the living room), I ask that everyone who uses them is aware of the project and joins at least part of Session 1 so we can make decisions that feel fair and realistic for everyone. If we’re only working on <strong>your private room</strong>, I’ll stay within that space.</p>
-					</div>
-				</details>
-
-				<details class="faq-item">
-					<summary>Q: Do you work on whole flats, or just individual rooms?</summary>
-					<div class="faq-item__content">
-						<p>A: My favourite is to work on the <strong>whole flat</strong> (however small), because it lets me make the layout flow properly. But it’s also possible to focus on:</p>
-						<ul>
-							<li>just your <strong>room</strong> in a shared flat, or</li>
-							<li>a single <strong>shared area</strong> like a living room.</li>
-						</ul>
-						<p>We’ll agree the scope clearly before we start, so you know exactly what’s included.</p>
-					</div>
-				</details>
-
-				<details class="faq-item">
-					<summary>Q: Do you do renovations or built‑ins?</summary>
-					<div class="faq-item__content">
-						<p>A: No. Everything I suggest is renter‑friendly and reversible. No walls down, no permanent joinery.</p>
-					</div>
-				</details>
-
-				<details class="faq-item">
-					<summary>Q: Do I need to buy all new furniture?</summary>
-					<div class="faq-item__content">
-						<p>A: No. We start with what you have and add a few targeted pieces if needed—often lamps, storage or textiles.</p>
-					</div>
-				</details>
-
-				<details class="faq-item">
-					<summary>Q: Do you assemble furniture?</summary>
-					<div class="faq-item__content">
-						<p>A: I ask clients to have any new pieces assembled before Session 2 so we can focus on layout and styling. If a simple item needs a final touch and we have time, I’m happy to help, but full assembly isn’t part of the service.</p>
-					</div>
-				</details>
-
-				<details class="faq-item">
-					<summary>Q: What size flats do you work with?</summary>
-					<div class="faq-item__content">
-						<p>A: I work with rental apartments of all sizes, but I especially enjoy small spaces where layout and flow make a big difference.</p>
-					</div>
-				</details>
-
-				<details class="faq-item">
-					<summary>Q: Can we do this online?</summary>
-					<div class="faq-item__content">
-						<p>A: Yes. If you’re moving and don’t have access to the space yet, Session 1 can be done online using your floor plan and photos. If you’re already living in the flat, I recommend an in-person session because moving things physically is a big part of the process.</p>
-					</div>
-				</details>
-			</div>
-		</div>
-	</section>
-
-	<section class="pricing-section" aria-label="Pricing">
-		<div class="site-shell pricing-section__inner">
-			<div class="pricing-section__intro">
-				<span class="eyebrow">Pricing</span>
-				<h2>This is a two‑session service. Early projects are priced at a reduced “portfolio‑building” rate.</h2>
-				<p>Share a bit about your flat via the form below, and I’ll reply with a clear quote before you commit to anything.</p>
-			</div>
-
-			<div class="pricing-cards">
-				<article class="pricing-card">
-					<h3>Small Flat Transformation — HKD 4,800</h3>
-					<p>For studios and 1–2 bedroom rental flats. Two in‑person sessions plus a clear After Dark Plan to make your whole home feel planned, not temporary.</p>
-					<ul>
-						<li>Whole flat focus</li>
-						<li>Two sessions (walk‑through + setup)</li>
-						<li>Clear After Dark Plan delivered</li>
-					</ul>
-				</article>
-
-				<article class="pricing-card">
-					<h3>Room Reset — HKD 3,200</h3>
-					<p>A focused, one‑room reset for a bedroom or single living area. We work deeply on a single space so it truly works for how you live.</p>
-					<ul>
-						<li>Single room focus</li>
-						<li>One or 1.5 sessions depending on scope</li>
-						<li>Prioritised action list and shopping suggestions</li>
-					</ul>
-				</article>
-			</div>
-
-			<p class="pricing-note"><em>These are introductory prices while I build up After Dark Studio. Once you fill in the enquiry form, I’ll confirm the exact scope and price before you commit to anything.</em></p>
-
-			<div class="pricing-cta">
-				<a class="button button--primary" href="https://docs.google.com/forms/d/e/1FAIpQLScMhkQxJpi7S7oCcPvw5a082q0Zt38LkCtar3LjJriCU107GA/viewform" target="_blank" rel="noreferrer">Share your flat details</a>
-			</div>
-		</div>
-	</section>
-
-	<script>
-		const faqItems = Array.from(document.querySelectorAll('.faq-item'));
-
-		faqItems.forEach((item) => {
-			item.addEventListener('toggle', () => {
-				if (!item.open) return;
-
-				faqItems.forEach((other) => {
-					if (other !== item) other.open = false;
-				});
-			});
-		});
-	</script>
 
 </Layout>
 
@@ -359,7 +126,7 @@ import aboutPortrait from "../assets/Image_20260509161325_9_79.jpg";
 	.hero-hero__subheading {
 		margin-top: 1rem;
 		font-size: clamp(1.2rem, 2vw, 1.55rem);
-		color: rgba(245, 240, 232, 0.9);
+		color: var(--heading);
 		max-width: 24ch;
 	}
 
@@ -367,7 +134,7 @@ import aboutPortrait from "../assets/Image_20260509161325_9_79.jpg";
 		margin-top: 1rem;
 		font-size: 1.1rem;
 		max-width: 48ch;
-		color: rgba(245, 240, 232, 0.82);
+		color: var(--text);
 	}
 
 	.hero-hero__actions {
@@ -384,8 +151,6 @@ import aboutPortrait from "../assets/Image_20260509161325_9_79.jpg";
 		display: grid;
 		gap: 1rem;
 		align-items: start;
-		border-left: 4px solid rgba(199, 148, 92, 0.12);
-		padding-left: 1rem;
 	}
 
 	.is-you-strip__heading {
@@ -426,6 +191,36 @@ import aboutPortrait from "../assets/Image_20260509161325_9_79.jpg";
 		margin-top: 0.75rem;
 		font-weight: 700;
 		color: var(--heading);
+	}
+
+	#what-i-do .card {
+		background: var(--bg);
+		border: 1px solid rgba(31, 41, 51, 0.08);
+		box-shadow: none;
+	}
+
+	#what-i-do h3 {
+		color: var(--heading);
+	}
+
+	#what-i-do li::marker {
+		color: var(--accent-teal);
+	}
+
+	#investment .card {
+		background: var(--bg);
+		border: 1px solid rgba(59, 124, 130, 0.35);
+		box-shadow: 0 12px 28px rgba(30, 41, 59, 0.06);
+	}
+
+	#investment p,
+	#investment li {
+		color: var(--text);
+	}
+
+	#investment .button--primary {
+		background: var(--accent-tan);
+		color: var(--bg);
 	}
 
 	.what-does {
@@ -528,8 +323,8 @@ import aboutPortrait from "../assets/Image_20260509161325_9_79.jpg";
 
 	.about-section__copy {
 		padding: 1.5rem;
-		background: rgba(255, 255, 255, 0.5);
-		border: 1px solid rgba(31, 41, 51, 0.08);
+		background: var(--bg);
+		border: 1px solid rgba(59, 124, 130, 0.28);
 		box-shadow: 0 18px 40px rgba(30, 41, 59, 0.08);
 		color: var(--text);
 	}
@@ -549,12 +344,12 @@ import aboutPortrait from "../assets/Image_20260509161325_9_79.jpg";
 		display: inline-flex;
 		margin-top: 1.15rem;
 		font-weight: 700;
-		color: var(--accent-3);
+		color: var(--accent-teal);
 	}
 
 	.about-section__link:hover,
 	.about-section__link:focus-visible {
-		color: var(--accent-2);
+		color: var(--accent-tan);
 		outline: none;
 	}
 
@@ -595,8 +390,8 @@ import aboutPortrait from "../assets/Image_20260509161325_9_79.jpg";
 	}
 
 	.how-it-works {
-		background: linear-gradient(180deg, rgba(224, 122, 95, 0.08), rgba(245, 240, 232, 0.98));
-		border-top: 4px solid rgba(199, 148, 92, 0.65);
+		background: var(--bg);
+		border-top: 1px solid rgba(199, 148, 92, 0.4);
 		padding: 2.5rem 0 3rem;
 	}
 
