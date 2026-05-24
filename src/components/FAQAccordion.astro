@@ -4,7 +4,6 @@
 <section id="faq" class="section faq-section">
   <div class="site-shell faq-section__inner">
     <div class="faq-section__intro">
-      <span class="eyebrow">FAQ</span>
       <h2>FAQ</h2>
     </div>
 
@@ -56,8 +55,8 @@
 
 <style>
   .faq-section {
-    background: var(--bg);
-    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    background: var(--section-bg, var(--bg));
+    border-top: 1px solid var(--section-border, rgba(199, 148, 92, 0.2));
     padding: 2.5rem 0 3rem;
   }
 
@@ -72,16 +71,16 @@
   summary {
     cursor: pointer;
     font-weight: 600;
-    color: var(--heading);
+    color: var(--section-heading, var(--heading));
     list-style: none;
   }
-  summary::marker { color: var(--accent-teal); }
+  summary::marker { color: var(--section-accent, var(--accent-teal)); }
   summary::after {
     content: "+";
     float: right;
-    color: var(--accent-teal);
+    color: var(--section-accent, var(--accent-teal));
   }
-  details[open] summary { color: var(--accent-teal); }
+  details[open] summary { color: var(--section-accent, var(--accent-teal)); }
   details[open] summary::after { content: "–"; }
-  details p { margin-top: 0.5rem; color: var(--text); }
+  details p { margin-top: 0.5rem; color: var(--section-text, var(--text)); }
 </style>

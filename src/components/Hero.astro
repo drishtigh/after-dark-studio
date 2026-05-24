@@ -17,8 +17,15 @@
 
 <style>
   .hero-compact {
-    background: var(--bg);
-    color: var(--heading);
+    --section-bg: var(--bg);
+    --section-heading: var(--heading);
+    --section-text: var(--text);
+    --section-accent: var(--accent-tan);
+    --section-accent-text: var(--bg);
+    --section-accent-hover: var(--accent-teal);
+    --section-accent-link: var(--accent-teal);
+    background: var(--section-bg, var(--bg));
+    color: var(--section-text, var(--text));
     padding: 1rem 0 3rem;
   }
 
@@ -26,18 +33,18 @@
     margin: 0;
     font-size: clamp(2.6rem, 6vw, 4.2rem);
     line-height: 1.02;
-    color: var(--heading);
+    color: var(--section-heading, var(--heading));
   }
 
   .hero-compact p {
     margin: 0.75rem 0 0;
-    color: var(--text);
+    color: var(--section-text, var(--text));
     max-width: 56ch;
   }
 
   .hero-tag {
     margin-top: 0.6rem;
-    color: var(--text);
+    color: var(--section-text, var(--text));
   }
 
   .hero-actions {
@@ -47,14 +54,14 @@
   .btn-primary {
     display: inline-block;
     padding: 0.8rem 1.6rem;
-    background: var(--accent-tan);
-    color: var(--bg);
+    background: var(--section-accent, var(--accent-tan));
+    color: var(--section-accent-text, var(--bg));
     border-radius: 999px;
     font-weight: 600;
   }
 
   .btn-primary:hover {
-    border: 2px solid var(--accent-teal);
+    border: 2px solid var(--section-accent-hover, var(--accent-teal));
     padding: 0.68rem 1.48rem;
   }
 
@@ -63,7 +70,7 @@
     font-size: 0.95rem;
   }
 
-  .hero-secondary a { color: var(--accent-teal); }
+  .hero-secondary a { color: var(--section-accent-link, var(--accent-teal)); }
 
   @media (max-width: 720px) {
     .hero-compact {

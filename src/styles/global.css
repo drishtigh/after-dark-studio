@@ -1,5 +1,7 @@
 :root {
 	--bg: #f5f0e8;
+	--font-heading: "Calisto MT", "Georgia", "Times New Roman", serif;
+	--font-body: "Ebrima", "Segoe UI", system-ui, -apple-system, sans-serif;
 	--text: #1f2933;
 	--heading: #1e293b;
 	--accent-1: #c7945c;
@@ -7,6 +9,17 @@
 	--accent-3: #3b7c82;
 	--accent-tan: #c7945c;
 	--accent-teal: #3b7c82;
+	--section-bg: var(--bg);
+	--section-heading: var(--heading);
+	--section-text: var(--text);
+	--section-accent: var(--accent-tan);
+	--section-accent-2: var(--accent-teal);
+	--section-border: rgba(199, 148, 92, 0.2);
+	--section-border-2: rgba(59, 124, 130, 0.35);
+	--section-surface: rgba(255, 250, 244, 0.78);
+	--section-accent-text: var(--bg);
+	--section-accent-link: var(--accent-teal);
+	--section-accent-hover: var(--accent-teal);
 	--surface: rgba(255, 250, 244, 0.7);
 	--border: rgba(31, 41, 51, 0.08);
 	--shadow: 0 24px 80px rgba(30, 41, 59, 0.12);
@@ -22,6 +35,9 @@
 }
 
 body {
+	font-family: var(--font-body);
+	font-size: clamp(1rem, 0.95rem + 0.35vw, 1.125rem);
+	line-height: 1.6;
 	color: var(--text);
 }
 
@@ -31,7 +47,26 @@ h3,
 h4,
 h5,
 h6 {
+	font-family: var(--font-heading);
 	color: var(--heading);
+	line-height: 1.15;
+}
+
+h2 {
+	letter-spacing: 0.02em;
+}
+
+h3 {
+	display: inline-block;
+	margin: 0 0 0.6rem;
+	padding-bottom: 0.25rem;
+	font-size: clamp(1.125rem, 1.05rem + 0.35vw, 1.25rem);
+	border-bottom: 2px solid var(--accent-tan);
+}
+
+p,
+li {
+	line-height: 1.6;
 }
 
 a {
@@ -180,7 +215,7 @@ main {
 }
 
 /* Contact / CTA (dark footer-adjacent section) */
-.contact-cta {
+.card.contact-cta {
 	background: #3b7c82;
 	color: #f5f0e8;
 	padding: 2.25rem 1.25rem;
@@ -195,14 +230,14 @@ main {
 	align-items: center;
 }
 
-.contact-cta__copy h2 {
+.card.contact-cta__copy h2 {
 	margin: 0 0 0.35rem 0;
 	color: #f5f0e8;
 }
 
-.contact-cta__copy p {
+.card.contact-cta__copy p {
 	margin: 0;
-	color: rgba(245,240,232,0.9);
+	color: #f5f0e8;
 }
 
 .contact-cta__actions {
@@ -214,29 +249,35 @@ main {
 
 .button--ghost {
 	background: transparent;
-	border: 1px solid rgba(245,240,232,0.12);
-	color: #f5f0e8;
+	border: 1px solid var(--section-border, rgba(245, 240, 232, 0.18));
+	color: var(--section-text, #f5f0e8);
 	padding: 0.55rem 0.85rem;
 	border-radius: 999px;
 }
 
 .button--ghost:hover,
 .button--ghost:focus-visible {
-	background: rgba(245,240,232,0.06);
+	background: rgba(245,240,232,0.08);
 	outline: none;
 }
 
 .contact-cta .button--primary {
-	background: #c7945c;
-	color: #f5f0e8;
+	background: var(--section-accent, #c7945c);
+	color: var(--section-accent-text, #f5f0e8);
 	box-shadow: none;
 	border-color: transparent;
 }
 
 .contact-cta .button--primary:hover,
 .contact-cta .button--primary:focus-visible {
-	background: #d3a56e;
+	background: color-mix(in srgb, var(--section-accent, #c7945c) 88%, white);
 	transform: translateY(-1px);
+}
+
+.contact-cta a:not(.button) {
+	color: var(--section-text, #f5f0e8);
+	text-decoration: underline;
+	text-underline-offset: 0.15em;
 }
 
 .contact-cta a:not(.button) {
@@ -313,132 +354,85 @@ main {
 	color: var(--heading);
 }
 
-/* What After Dark Studio does */
-.what-does {
-	background: var(--bg);
-	padding: 2rem 0 3rem;
+/* Contact / CTA (dark footer-adjacent section) */
+.card.contact-cta {
+	background: #3b7c82;
+	color: #f5f0e8;
+	padding: 2.25rem 1.25rem;
+	border: 1px solid rgba(245, 240, 232, 0.18);
+	box-shadow: 0 20px 48px rgba(30, 41, 59, 0.12);
 }
 
-.what-does__grid {
+.contact-cta__inner {
 	display: grid;
-	grid-template-columns: 1fr 420px;
-	gap: 1.5rem;
-	align-items: start;
-}
-
-.what-does__copy {
-	padding: 1.25rem;
-	background: transparent;
-	border: none;
-	box-shadow: none;
-}
-
-.what-does__copy h2 {
-	margin-top: 0.5rem;
-	color: var(--heading);
-}
-
-.photo-grid {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-auto-rows: 140px;
-	gap: 0.5rem;
+	grid-template-columns: 1fr auto;
+	gap: 1rem;
 	align-items: center;
 }
 
-.photo-grid img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	border-radius: 10px;
-	display: block;
+.card.contact-cta__copy h2 {
+	margin: 0 0 0.35rem 0;
+	color: #f5f0e8;
+}
+
+.card.contact-cta__copy p {
+	margin: 0;
+	color: #f5f0e8;
+}
+
+.contact-cta__actions {
+	display: flex;
+	gap: 0.6rem;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.card.contact-cta .button--ghost {
+	background: transparent;
+	border: 1px solid rgba(245, 240, 232, 0.18);
+	color: #f5f0e8;
+	padding: 0.55rem 0.85rem;
+	border-radius: 999px;
+}
+
+.card.contact-cta .button--ghost:hover,
+.card.contact-cta .button--ghost:focus-visible {
+	background: rgba(245,240,232,0.08);
+	outline: none;
+}
+
+.card.contact-cta .button--primary {
+	background: #c7945c;
+	color: #f5f0e8;
+	box-shadow: none;
+	border-color: transparent;
+}
+
+.card.contact-cta .button--primary:hover,
+.card.contact-cta .button--primary:focus-visible {
+	background: color-mix(in srgb, #c7945c 88%, white);
+	transform: translateY(-1px);
+}
+
+.card.contact-cta a:not(.button) {
+	color: #f5f0e8;
+	text-decoration: underline;
+	text-underline-offset: 0.15em;
+}
+
+.card.contact-cta p {
+	color: #f5f0e8;
 }
 
 @media (max-width: 900px) {
-	.what-does__grid {
+	.contact-cta__inner {
 		grid-template-columns: 1fr;
-	/* Keeping how-it-works section intact */
+		gap: 0.75rem;
+		text-align: left;
 	}
 
-	.is-you-strip__grid {
-		grid-template-columns: 1fr;
-	}
-
-	.photo-grid {
-		grid-auto-rows: 120px;
-		grid-template-columns: repeat(3, 1fr);
-	}
-}
-
-/* Enhanced responsiveness and spacing tweaks */
-.hero-hero__content {
-	gap: 2rem;
-}
-
-.hero-hero h1 {
-	line-height: 1.02;
-}
-
-.is-you-strip {
-	padding-top: 2.5rem;
-	padding-bottom: 2.5rem;
-}
-
-.is-you-strip__grid ul {
-	padding-left: 0.4rem;
-}
-
-.is-you-strip__grid li::marker {
-	color: var(--accent-1);
-}
-
-.is-you-strip__grid li {
-	position: relative;
-}
-
-/* Add subtle accent line at left for the strip */
-.is-you-strip__inner {
-	border-left: 4px solid rgba(199,148,92,0.12);
-	padding-left: 1rem;
-}
-
-.is-you-strip__heading {
-	display: inline-block;
-	border-bottom: 3px solid var(--accent-1);
-	padding-bottom: 0.35rem;
-}
-
-.what-does__grid {
-	align-items: start;
-}
-
-/* Make the photo grid more dynamic on desktop: first image larger */
-.photo-grid {
-	grid-template-columns: 1fr 1fr;
-	grid-auto-rows: 140px;
-}
-
-.photo-grid img:first-child {
-	grid-row: span 2;
-	height: 100%;
-}
-
-@media (max-width: 640px) {
-	.hero-hero__content {
-		padding: 1rem 0;
-	}
-
-	.hero-hero__intro {
-		font-size: 1rem;
-	}
-
-	.photo-grid {
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-auto-rows: 100px;
-	}
-
-	.photo-grid img:first-child {
-		grid-row: auto;
+	.contact-cta__actions {
+		justify-content: flex-start;
 	}
 }
 

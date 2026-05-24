@@ -69,8 +69,8 @@
 
 <style>
   .how-it-works {
-    background: var(--bg);
-    border-top: 1px solid rgba(199, 148, 92, 0.4);
+    background: var(--section-bg, var(--bg));
+    border-top: 1px solid var(--section-border, rgba(199, 148, 92, 0.4));
     padding: 2.5rem 0 3rem;
   }
 
@@ -90,26 +90,24 @@
   .step {
     min-width: 16rem;
     flex: 0 0 auto;
-    border-top: 3px solid var(--accent-tan);
+    border-top: 3px solid var(--section-accent, var(--accent-tan));
     padding-top: 0.75rem;
   }
 
   .step__icon {
-    color: var(--accent-teal);
+    color: var(--section-accent-2, var(--accent-teal));
     margin-bottom: 0.5rem;
     display: inline-block;
   }
 
   .step h3 {
-    margin: 0 0 0.35rem 0;
-    font-size: 1rem;
-    color: var(--heading);
+    color: var(--section-heading, var(--heading));
   }
 
   .step p,
   .step li {
     margin: 0;
-    color: var(--text);
+    color: var(--section-text, var(--text));
   }
 
   .step ul {
@@ -127,11 +125,17 @@
   .how-it-works__intro h2,
   .how-it-works__ending,
   .how-it-works__cta p {
-    color: var(--heading);
+    color: var(--section-heading, var(--heading));
+  }
+
+  .how-it-works__intro h2 {
+    margin: 0.35rem 0 0.75rem;
+    font-size: clamp(1.25rem, 2.2vw, 1.5rem);
+    letter-spacing: 0.02em;
   }
 
   .how-it-works__cta {
-    border: 1px solid rgba(59, 124, 130, 0.35);
-    background: rgba(255, 250, 244, 0.78);
+    border: 1px solid var(--section-border-2, rgba(59, 124, 130, 0.35));
+    background: var(--section-surface, rgba(255, 250, 244, 0.78));
   }
 </style>

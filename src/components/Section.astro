@@ -14,10 +14,12 @@ const { id, title } = Astro.props;
   .section {
     margin: 2.5rem 0;
     padding: 1rem 0;
+    background: var(--section-bg, var(--bg));
+    color: var(--section-text, var(--text));
   }
 
   .section__inner {
-    max-width: 64ch;
+    max-width: 68ch;
     margin: 0 auto;
     display: block;
     gap: 1rem;
@@ -25,7 +27,7 @@ const { id, title } = Astro.props;
 
   .section > h2 {
     margin-bottom: 0.75rem;
-    color: var(--heading);
+    color: var(--section-heading, var(--heading));
     font-size: clamp(1.25rem, 2.2vw, 1.5rem);
   }
 
