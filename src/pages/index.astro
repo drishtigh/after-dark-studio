@@ -4,6 +4,7 @@ import Hero from "../components/Hero.astro";
 import Section from "../components/Section.astro";
 import ProcessSteps from "../components/ProcessSteps.astro";
 import FAQAccordion from "../components/FAQAccordion.astro";
+import CTAForm from "../components/CTAForm.astro";
 // removed unused images for deleted sections
 import aboutPortrait from "../assets/Image_20260509161325_9_79.jpg";
 ---
@@ -90,8 +91,7 @@ import aboutPortrait from "../assets/Image_20260509161325_9_79.jpg";
 
 	<Section id="ready" title="Ready for a space that fits how you really live?">
 		<div class="card contact-cta">
-			<p><a class="button button--primary" href="https://docs.google.com/forms/d/e/1FAIpQLScMhkQxJpi7S7oCcPvw5a082q0Zt38LkCtar3LjJriCU107GA/viewform" target="_blank" rel="noreferrer">Book a free 15‑minute Home Fit Call →</a></p>
-			<p style="margin-top:0.75rem">Or WhatsApp me 3 photos: <a href="https://wa.me/85290543117" rel="noreferrer">+852 9054 3117</a></p>
+			<CTAForm />
 		</div>
 	</Section>
 

@@ -1,7 +1,12 @@
 ---
 ---
+
 <section class="hero-compact" aria-label="Hero">
-  <h1>Your home should fit you, not the other way around.</h1>
+  <h1 class="hero-heading">
+    <span class="hero-after-dark">After Dark</span>
+    <span class="hero-studio">Studio</span>
+  </h1>
+  <p class="hero-subheading">Your home should fit you, not the other way around.</p>
   <p>
     A 2‑session, hands‑on layout and systems service for renters in Hong Kong
     who want a calm, functional home using <em>mostly what they already have</em> –
@@ -16,6 +21,16 @@
 </section>
 
 <style>
+  @font-face {
+    font-family: "Calistro MT";
+    src: url("/fonts/calistro-mt.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Ebrima";
+    src: url("/fonts/ebrima.ttf") format("truetype");
+  }
+
   .hero-compact {
     --section-bg: var(--bg);
     --section-heading: var(--heading);
@@ -29,11 +44,31 @@
     padding: 1rem 0 3rem;
   }
 
-  .hero-compact h1 {
+  .hero-heading {
     margin: 0;
-    font-size: clamp(2.6rem, 6vw, 4.2rem);
-    line-height: 1.02;
-    color: var(--section-heading, var(--heading));
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    line-height: 1.1;
+    color: #1e293b;
+  }
+
+  .hero-after-dark {
+    font-family: "Calistro MT", serif;
+    display: inline;
+  }
+
+  .hero-studio {
+    font-family: "Ebrima", sans-serif;
+    display: inline;
+    font-weight: 400;
+  }
+
+  .hero-subheading {
+    margin: 0.75rem 0 0;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.4;
+    color: var(--section-text, var(--text));
+    font-weight: 400;
+    max-width: 56ch;
   }
 
   .hero-compact p {

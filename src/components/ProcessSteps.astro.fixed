@@ -8,8 +8,8 @@
         <h2>How it works</h2>
         <p class="subheading">A focused, two-session process. No renovations, no endless revisions.</p>
         <p class="intro">
-          I work with a small number of clients each month, so this is a hands-on,
-          collaborative process, not a quick moodboard.
+          I work with a small number of clients each month, so this is a hands‑on,
+          collaborative process – not a quick moodboard.
         </p>
       </div>
 
@@ -17,37 +17,41 @@
         <div class="steps" role="list">
         <div class="step" role="listitem">
           <div class="step__circle">
-            <span class="step__circle-text">Free Call</span>
+            <span class="step__circle-text">Free 15‑minute Home Fit Call</span>
           </div>
           <button class="step__toggle" aria-expanded="false">
-            <h3>Free 15 minute Home Fit Call</h3>
+            <h3>Free 15‑minute Home Fit Call</h3>
           </button>
           <div class="step__content">
-            <p>We talk about your space, what's not working, and what you'd like instead. I'll ask about your routines, budget comfort zone and whether you’re already living there or about to move in.</p>
+            <p>We talk about your space, what's not working, and what you'd like instead. I'll ask about your routines, budget comfort zone and whether you're already living there or about to move in.</p>
             <p>If it sounds like a good match on both sides, we choose a package and book Session 1.</p>
           </div>
         </div>
 
         <div class="step" role="listitem">
           <div class="step__circle">
-            <span class="step__circle-text">Session 1</span>
+            <span class="step__circle-text">Session 1 – Layout & Flow<br>(90–120 min)</span>
           </div>
-          <h3>Session 1: Layout & Flow (90-120 min)</h3>
-          <p>Walk-through of your space and how you actually live in it, spotting friction points and testing new layouts.</p>
-          <ul>
-            <li>Look at how you move, work, relax, and store things day to day</li>
-            <li>Spot friction: where clutter gathers, what's hard to clean, what feels “off”</li>
-            <li>Live rearranging to test new layouts and paths</li>
-            <li>Small, focused shopping list only if we find real gaps (lighting, storage)</li>
-          </ul>
+          <button class="step__toggle" aria-expanded="false">
+            <h3>Session 1 – Layout & Flow (90–120 min)</h3>
+          </button>
+          <div class="step__content">
+            <p>Walk‑through of your space and how you actually live in it, spotting friction points and testing new layouts.</p>
+            <ul>
+              <li>Look at how you move, work, relax, and store things day to day</li>
+              <li>Spot friction: where clutter gathers, what's hard to clean, what feels "off"</li>
+              <li>Live rearranging to test new layouts and paths</li>
+              <li>Small, focused shopping list only if we find real gaps (lighting, storage)</li>
+            </ul>
+          </div>
         </div>
 
         <div class="step" role="listitem">
           <div class="step__circle">
-            <span class="step__circle-text">Session 2</span>
+            <span class="step__circle-text">Session 2 – Setup & Tuning<br>(60–90 min)</span>
           </div>
             <button class="step__toggle" aria-expanded="false">
-              <h3>Session 2: Setup & Tuning (60-90 min)</h3>
+              <h3>Session 2 – Setup & Tuning (60–90 min)</h3>
             </button>
             <div class="step__content">
               <p>Put everything in place and tune it until it feels natural for how you move, sit, cook and rest.</p>
