@@ -15,10 +15,10 @@ import heroImageMobile from "../assets/NYC home editted_4.jpg";
       who want a calm, functional home using <em>mostly what they already have</em> –
       not a buy‑everything‑new makeover.
     </p>
-    <p class="hero-tag">Because even a one‑year rental deserves a real home.</p>
+    <p class="hero-tag"><strong>Because even a one‑year rental deserves a real home.</strong></p>
 
     <div class="hero-actions">
-      <a class="btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLScMhkQxJpi7S7oCcPvw5a082q0Zt38LkCtar3LjJriCU107GA/viewform" target="_blank" rel="noreferrer">Book a free 15‑minute Home Fit Call</a>
+      <a class="btn-primary" href="#ready">Book a free 15‑minute Home Fit Call</a>
       <p class="hero-secondary">Or WhatsApp me 3 photos: <a href="https://wa.me/85290543117">+852 9054 3117</a></p>
     </div>
   </div>
@@ -46,7 +46,7 @@ import heroImageMobile from "../assets/NYC home editted_4.jpg";
     color: var(--section-text, var(--text));
     padding: 4rem 0 5rem;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
   }
 
   .hero-bg-image {
@@ -91,6 +91,12 @@ import heroImageMobile from "../assets/NYC home editted_4.jpg";
   .hero-content {
     position: relative;
     z-index: 2;
+  }
+
+  @media (min-width: 861px) {
+    .hero-content {
+      padding: 0 2rem;
+    }
   }
 
   .hero-heading {
@@ -145,6 +151,12 @@ import heroImageMobile from "../assets/NYC home editted_4.jpg";
   @media (max-width: 720px) {
     .hero-compact {
       padding-bottom: 2.25rem;
+      padding-top: 3rem;
+    }
+
+    .hero-content {
+      text-align: center;
+      padding: 0 1.5rem;
     }
 
     .btn-primary {

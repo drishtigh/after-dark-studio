@@ -1,4 +1,4 @@
----
+﻿---
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import Section from "../components/Section.astro";
@@ -7,78 +7,85 @@ import FAQAccordion from "../components/FAQAccordion.astro";
 import CTAForm from "../components/CTAForm.astro";
 // removed unused images for deleted sections
 import aboutPortrait from "../assets/Image_20260509161325_9_79.jpg";
+import whatIDoImage from "../assets/WhatsApp Image 2025-03-13 at 2.32.28 PM(6).jpeg";
 ---
 
 <Layout
-	pageTitle="After Dark Studio | Hong Kong rental interiors"
+	pageTitle="After Dark Studio | Hong Kong Rental Interiors"
 	pageDescription="After Dark Studio helps renters in Hong Kong turn temporary spaces into homes that work for real life."
 	headerTheme="dark"
 >
-	<div class="site-shell">
-		<Hero />
-	</div>
+	<Hero />
 
-	<Section id="is-this-you" title="Is this you?">
+	<Section id="is-this-you" title="Is This You?">
 		<div class="is-you-strip__inner">
 			<!-- Heading provided by Section wrapper; removed duplicate -->
 			<div class="is-you-strip__grid">
 				<ul>
-					<li>You rent a small flat in Hong Kong and it’s always felt a bit temporary – so you’ve never fully set it up to <em>support</em> you.</li>
-					<li>You’re not a minimalist, but visual clutter and bad layout make you feel wired, tired or vaguely stressed at home.</li>
-					<li>You already own “enough stuff”, yet the space never quite works: counters attract piles, chairs collect clothes, the entry is always chaos.</li>
+					<li>Your dining table is mostly a drop-zone, not for eating</li>
+					<li>One chair has become the permanent clothes mountain</li>
+					<li>You've done the “shove everything in one room and close the door” before guests arrive</li>
 				</ul>
 				<ul>
-					<li>You don’t want to become a different person. You want your home and systems to make it <em>easier</em> to be the way you are and still feel “tidy enough”.</li>
-					<li>You care about waste and money – throwing everything out feels wrong, but you’re open to a few intentional additions if they really help your daily life.</li>
+					<li>You don't want to throw everything out and start over</li>
+					<li>You're about to move and want the new place to feel right from day one</li>
 				</ul>
 			</div>
-			<p class="is-you-strip__closing">If you’re nodding along, you’re exactly who I design for. The goal isn’t perfection. It’s a home that quietly supports how you really live.</p>
+			<p class="is-you-strip__closing">If you're mentally ticking a few boxes, you're exactly who I design for.</p>
 		</div>
 	</Section>
 
-	<Section id="what-i-do" title="What I actually do">
-		<div class="card">
-			<h3>Not a “buy everything new” service</h3>
-			<p>Most design services start with shopping lists. I start with what you already have.</p>
-			<p>After Dark Studio is for people who:</p>
-			<ul>
-				<li>don’t want to waste money or create more clutter, and</li>
-				<li>want their home to feel calmer and work better <em>before</em> they buy more.</li>
-			</ul>
-			<p>Together we will:</p>
-			<ul>
-				<li>re‑plan your layout and systems so your home fits how you really live,</li>
-				<li>rearrange and edit what you already own,</li>
-				<li>only add new pieces if they clearly solve a problem (light, storage, comfort) and can move with you.</li>
-			</ul>
-			<p>If you’re looking for a shopping buddy to redo everything from scratch, I’m probably not the right fit.</p>
-		</div>
-	</Section>
+	<Section id="what-i-do" title="What I Actually Do">
+<div class="what-i-do__container">
+<div>
+<h3>Not a "buy everything new" service</h3>
+<p>Most design services start with shopping lists. I start with what you already have.</p>
+
+<p>Together we will:</p>
+<ul>
+<li>Re-plan your layout and systems so your home fits how you really live</li>
+<li>Rearrange and edit what you already own</li>
+<li>Only add new pieces if they clearly solve a problem (light, storage, comfort) and can move with you</li>
+</ul>
+<p>If you're looking for a shopping buddy to redo everything from scratch, I'm probably not the right fit.</p>
+</div>
+<figure class="what-i-do__image">
+<img src={whatIDoImage.src} alt="What I actually do - interior design process" />
+</figure>
+</div>
+</Section>
 
 	<ProcessSteps />
 
 	<Section id="investment" title="Investment">
-		<div class="card">
-			<p>I offer a focused, two‑session service for renters, creating micro‑solutions for your repeat problems – the chair that always collects clothes, the table that ends up buried, the corner you never use.</p>
-			<p>Most projects for a whole small flat (studio / 1–2 bed) land in the <strong>mid‑HKD 4,000s</strong>. Single‑room projects are lower.</p>
-			<p>On our free 15‑minute Home Fit Call, I’ll recommend the right option for your space and give you a clear quote before you decide.</p>
-			<p class="pricing-cta"><a class="button button--primary" href="https://docs.google.com/forms/d/e/1FAIpQLScMhkQxJpi7S7oCcPvw5a082q0Zt38LkCtar3LjJriCU107GA/viewform" target="_blank" rel="noreferrer">Share your flat details</a></p>
+		<div class="investment__container">
+			<div>
+				<p>I offer a focused, two-session service for renters, creating micro-solutions for your repeat problems - the chair that always collects clothes, the table that ends up buried, the corner you never use.</p>
+				<p>Most projects for a whole small flat (studio / 1-2 bed) land around <strong>HKD 5,000</strong>. Single-room projects are lower.</p>
+				<p>On our free 15-minute Home Fit Call, I'll recommend the right option for your space and give you a clear quote before you decide.</p>
+				<p class="pricing-cta"><a class="button button--primary" href="#ready" target="_blank" rel="noreferrer">Share your flat details</a></p>
+			</div>
+			<div class="investment__offers">
+				<div class="offer-card">
+					<h4>Small Flat</h4>
+					<p>Whole space</p>
+				</div>
+				<div class="offer-card">
+					<h4>Room Reset</h4>
+					<p>One room</p>
+				</div>
+			</div>
 		</div>
 	</Section>
 
 	<Section id="about" title="About">
 		<div class="about-section__inner">
 			<div class="about-section__copy card">
-				<h2>I’m Drishti – a spatial designer based in Hong Kong</h2>
-				<p>With a background in interior and scenic design for theatre, sets and installations, my favourite part has always been spatial planning – finding the exact placement of a bed, table or light that makes your body relax because the space finally works with you, not against you.</p>
-				<p>I’m less interested in buying new decor, and more interested in:</p>
-				<ul>
-					<li>how your body moves through your home,</li>
-					<li>what your nervous system needs to calm down, and</li>
-					<li>how to make everyday tasks feel lighter through layout and systems.</li>
+				<h3>I'm Drishti, a spatial designer based in Hong Kong</h3>
+				<p>With a background in interior and scenic design for theatre, sets and installations, my specialty has always been <strong>spatial planning</strong>, finding the exact placement of a bed, table or light that makes your body relax because the space finally works with you, not against you.</p>
 				</ul>
-				<p>I’ve designed everything from 7,500 sq ft penthouses to tiny rentals and theatre sets, and I bring that same level of care to your one‑year rental so it feels designed specifically for you, not just “good enough for now”.</p>
-				<p><a class="about-section__link" href="http://drishtichauhandesign.com/" target="_blank" rel="noreferrer">See more of my previous design work →</a></p>
+				<p>I've designed everything from 7,500 sq ft penthouses to tiny rentals and theatre sets, and I bring that same level of care to your one-year rental so it feels designed specifically for you, not just “good enough for now”.</p>
+				<p><a class="about-section__link" href="http://drishtichauhandesign.com/" target="_blank" rel="noreferrer">See more of my design work here→</a></p>
 			</div>
 
 			<figure class="about-section__portrait">
@@ -89,7 +96,7 @@ import aboutPortrait from "../assets/Image_20260509161325_9_79.jpg";
 
 	<FAQAccordion />
 
-	<Section id="ready" title="Ready for a space that fits how you really live?">
+	<Section id="ready" title="Ready For A Space That Fits How You Really Live?">
 		<div class="card contact-cta">
 			<CTAForm />
 		</div>
@@ -874,3 +881,4 @@ import aboutPortrait from "../assets/Image_20260509161325_9_79.jpg";
 		}
 	}
 </style>
+

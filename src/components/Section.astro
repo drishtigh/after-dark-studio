@@ -12,10 +12,24 @@ const { id, title } = Astro.props;
 
 <style>
   .section {
-    margin: 2.5rem 0;
+    margin: 0;
     padding: 1rem 0;
     background: var(--section-bg, var(--bg));
     color: var(--section-text, var(--text));
+    border-bottom: 2px solid var(--section-border, rgba(199, 148, 92, 0.2));
+  }
+
+  .section#investment,
+  .section#ready {
+    border-top: 2px solid var(--section-border, rgba(199, 148, 92, 0.2));
+  }
+
+  .section#investment {
+    border-bottom: 2px solid var(--section-border, rgba(199, 148, 92, 0.2));
+  }
+
+  .section#ready {
+    border-bottom: none;
   }
 
   .section__inner {
@@ -23,6 +37,11 @@ const { id, title } = Astro.props;
     margin: 0 auto;
     display: block;
     gap: 1rem;
+  }
+
+  .section__inner > .what-i-do__container {
+    max-width: 100%;
+    margin: 0;
   }
 
   .section > h2 {

@@ -1,11 +1,11 @@
----
+﻿---
 ---
 
 <section id="process" class="section how-it-works">
   <div class="site-shell">
     <div class="how-it-works__inner">
       <div class="how-it-works__intro">
-        <h2>How it works</h2>
+        <h2>How It Works</h2>
         <p class="subheading">A focused, two-session process. No renovations, no endless revisions.</p>
         <p class="intro">
           I work with a small number of clients each month, so this is a hands-on,
@@ -23,8 +23,11 @@
             <h3>Free 15 minute Home Fit Call</h3>
           </button>
           <div class="step__content">
-            <p>We talk about your space, what's not working, and what you'd like instead. I'll ask about your routines, budget comfort zone and whether you’re already living there or about to move in.</p>
-            <p>If it sounds like a good match on both sides, we choose a package and book Session 1.</p>
+            <ul>
+              <li>Talk about your space, what's not working, and what you'd like instead</li>
+              <li>Ask about your routines and your budget comfort zone</li>
+              <li>If it sounds like a good match, choose a package and book Session 1</li>
+            </ul>
           </div>
         </div>
 
@@ -36,12 +39,11 @@
             <h3>Session 1: Layout & Flow (90-120 min)</h3>
           </button>
           <div class="step__content">
-            <p>Walk-through of your space and how you actually live in it, spotting friction points and testing new layouts.</p>
             <ul>
-              <li>Look at how you move, work, relax, and store things day to day</li>
+              <li>Walk-through of your space and how you actually live in it</li>
               <li>Spot friction: where clutter gathers, what's hard to clean, what feels "off"</li>
               <li>Live rearranging to test new layouts and paths</li>
-              <li>Small, focused shopping list only if we find real gaps (lighting, storage)</li>
+              <li>Small, focused shopping list only if we find real gaps (e.g. lighting, storage)</li>
             </ul>
           </div>
         </div>
@@ -54,7 +56,6 @@
               <h3>Session 2: Setup & Tuning (60-90 min)</h3>
             </button>
             <div class="step__content">
-              <p>Put everything in place and tune it until it feels natural for how you move, sit, cook and rest.</p>
               <ul>
                 <li>Put furniture and storage in place</li>
                 <li>Tweak until it feels natural for how you move, sit, cook and rest</li>
@@ -64,11 +65,11 @@
         </div>
       </div>
 
-      <p class="how-it-works__ending">Two sessions mean you get a clear beginning and end: a focused process, a finished space, and no endless back-and-forth.</p>
+      <p class="how-it-works__ending">Two sessions mean you get a clear beginning and end: <strong>a focused process, a finished space, and no endless back-and-forth.</strong></p>
 
       <div class="how-it-works__cta card">
         <p><strong>Ready to start?</strong> Fill in the enquiry form and I'll take it from there.</p>
-        <a class="button button--primary" href="https://docs.google.com/forms/d/e/1FAIpQLScMhkQxJpi7S7oCcPvw5a082q0Zt38LkCtar3LjJriCU107GA/viewform" target="_blank" rel="noreferrer">Fill in the enquiry form</a>
+        <a class="button button--primary" href="#ready" target="_blank" rel="noreferrer">Fill in the enquiry form</a>
       </div>
     </div>
   </div>
@@ -83,7 +84,7 @@
 
   .how-it-works__intro h2 {
     margin: 0;
-    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    font-size: clamp(1.25rem, 2.2vw, 1.5rem);
     color: var(--section-heading, var(--heading));
     font-family: var(--font-heading);
   }
@@ -129,19 +130,19 @@
     width: 160px;
     height: 160px;
     border-radius: 50%;
-    background: var(--section-accent, var(--accent-tan));
+    background: #1e293b;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 1.25rem;
-    border: 2px solid var(--section-accent-2, var(--accent-teal));
+    border: none;
     flex-shrink: 0;
   }
 
   .step__circle-text {
     font-size: 2rem;
     font-weight: 600;
-    color: var(--heading);
+    color: #f5f0e8;
     line-height: 1.3;
     padding: 1rem;
     font-family: var(--font-body);
@@ -276,6 +277,31 @@
     margin-top: 2rem;
     border: 1px solid var(--section-border-2, rgba(59, 124, 130, 0.35));
     background: var(--section-surface, rgba(255, 250, 244, 0.78));
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    justify-content: space-between;
+  }
+
+  .how-it-works__cta p {
+    margin: 0;
+    flex: 1;
+  }
+
+  .how-it-works__cta .button {
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 719px) {
+    .how-it-works__cta {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    .how-it-works__cta .button {
+      width: 100%;
+    }
   }
 </style>
 
@@ -319,3 +345,5 @@
     }
   });
 </script>
+
+
