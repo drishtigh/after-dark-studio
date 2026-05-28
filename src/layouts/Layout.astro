@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
-import studioLogo from "../assets/Light BG_Logo.png";
+import studioLogoSmall from "../assets/Light BG_Logo.png";
+import studioLogoBanner from "../assets/Dark BG_Name_Website Header.png";
 
 
 const {
@@ -24,7 +25,8 @@ const {
 		<header class={`site-header site-header--${headerTheme}`}>
 			<div class="site-shell site-header__inner">
 				<a class="brand" href="/" aria-label="Home">
-					<img class="brand__mark" src={studioLogo.src} alt="After Dark Studio logo" width="48" height="48" />
+					<img class="brand__mark brand__mark--mobile" src={studioLogoSmall.src} alt="After Dark Studio logo" width="48" height="48" />
+					<img class="brand__mark brand__mark--desktop" src={studioLogoBanner.src} alt="After Dark Studio" />
 				</a>
 
 				<nav class="site-nav" aria-label="Primary">

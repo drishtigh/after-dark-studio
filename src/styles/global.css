@@ -101,12 +101,17 @@ main {
 .site-header {
 	position: static;
 	z-index: 20;
-	background: rgba(245, 240, 232, 0.72);
-	border-bottom: 1px solid rgba(31, 41, 51, 0.08);
+	background: #1e293b;
+	border-bottom: 1px solid rgba(245, 240, 232, 0.12);
+}
+
+.site-header--light {
+	background: #1e293b;
+	border-bottom: 1px solid rgba(245, 240, 232, 0.12);
 }
 
 .site-header--dark {
-	background: rgba(30, 41, 59, 0.62);
+	background: #1e293b;
 	border-bottom: 1px solid rgba(245, 240, 232, 0.12);
 }
 
@@ -126,12 +131,33 @@ main {
 }
 
 .brand__mark {
+	display: none;
+	object-fit: contain;
+	flex: 0 0 auto;
+}
+
+.brand__mark--mobile {
 	display: grid;
 	place-items: center;
 	width: 3.15rem;
 	height: 3.15rem;
-	object-fit: contain;
-	flex: 0 0 auto;
+}
+
+.brand__mark--desktop {
+	display: none;
+	height: 2.5rem;
+	width: auto;
+}
+
+@media (min-width: 861px) {
+	.brand__mark--mobile {
+		display: none;
+	}
+
+	.brand__mark--desktop {
+		display: grid;
+		place-items: center;
+	}
 }
 
 .brand__copy {

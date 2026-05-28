@@ -139,7 +139,7 @@
   }
 
   .step__circle-text {
-    font-size: 1.1rem;
+    font-size: 2rem;
     font-weight: 600;
     color: var(--heading);
     line-height: 1.3;
@@ -222,7 +222,7 @@
     }
 
     .step__circle-text {
-      font-size: 0.85rem;
+      font-size: 1.7rem;
       padding: 0.75rem;
     }
 
@@ -280,7 +280,7 @@
 </style>
 
 <script>
-  // Mobile toggle functionality
+  // Mobile toggle functionality with accordion behavior
   const toggles = document.querySelectorAll('.step__toggle');
   
   toggles.forEach(toggle => {
@@ -293,6 +293,17 @@
       const content = step.querySelector('.step__content');
       const isOpen = toggle.getAttribute('aria-expanded') === 'true';
       
+      // Close all other open items (accordion behavior)
+      if (!isOpen) {
+        toggles.forEach(otherToggle => {
+          if (otherToggle !== toggle) {
+            otherToggle.setAttribute('aria-expanded', 'false');
+            otherToggle.closest('.step').querySelector('.step__content').classList.remove('open');
+          }
+        });
+      }
+      
+      // Toggle current item
       toggle.setAttribute('aria-expanded', !isOpen);
       content.classList.toggle('open');
     });

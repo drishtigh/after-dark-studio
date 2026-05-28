@@ -84,3 +84,21 @@
   details[open] summary::after { content: "–"; }
   details p { margin-top: 0.5rem; color: var(--section-text, var(--text)); }
 </style>
+
+<script>
+  // FAQ Accordion - only one open at a time
+  const faqDetails = document.querySelectorAll('#faq details');
+  
+  faqDetails.forEach(detail => {
+    detail.addEventListener('toggle', (e) => {
+      if (detail.open) {
+        // Close all other open details (accordion behavior)
+        faqDetails.forEach(otherDetail => {
+          if (otherDetail !== detail && otherDetail.open) {
+            otherDetail.open = false;
+          }
+        });
+      }
+    });
+  });
+</script>

@@ -1,22 +1,26 @@
 ---
+import heroImageLaptop from "../assets/NYC home editted_2.jpg";
+import heroImageMobile from "../assets/NYC home editted_4.jpg";
 ---
 
 <section class="hero-compact" aria-label="Hero">
-  <h1 class="hero-heading">
-    <span class="hero-after-dark">After Dark</span>
-    <span class="hero-studio">Studio</span>
-  </h1>
-  <p class="hero-subheading">Your home should fit you, not the other way around.</p>
-  <p>
-    A 2‑session, hands‑on layout and systems service for renters in Hong Kong
-    who want a calm, functional home using <em>mostly what they already have</em> –
-    not a buy‑everything‑new makeover.
-  </p>
-  <p class="hero-tag">Because even a one‑year rental deserves a real home.</p>
+  <img class="hero-bg-image hero-bg-image--laptop" src={heroImageLaptop.src} alt="Hero background" />
+  <img class="hero-bg-image hero-bg-image--mobile" src={heroImageMobile.src} alt="Hero background" />
+  <div class="hero-content">
+    <h1 class="hero-heading">
+      Your home should fit you, not the other way around.
+    </h1>
+    <p>
+      A 2‑session, hands‑on layout and systems service for renters in Hong Kong
+      who want a calm, functional home using <em>mostly what they already have</em> –
+      not a buy‑everything‑new makeover.
+    </p>
+    <p class="hero-tag">Because even a one‑year rental deserves a real home.</p>
 
-  <div class="hero-actions">
-    <a class="btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLScMhkQxJpi7S7oCcPvw5a082q0Zt38LkCtar3LjJriCU107GA/viewform" target="_blank" rel="noreferrer">Book a free 15‑minute Home Fit Call</a>
-    <p class="hero-secondary">Or WhatsApp me 3 photos: <a href="https://wa.me/85290543117">+852 9054 3117</a></p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLScMhkQxJpi7S7oCcPvw5a082q0Zt38LkCtar3LjJriCU107GA/viewform" target="_blank" rel="noreferrer">Book a free 15‑minute Home Fit Call</a>
+      <p class="hero-secondary">Or WhatsApp me 3 photos: <a href="https://wa.me/85290543117">+852 9054 3117</a></p>
+    </div>
   </div>
 </section>
 
@@ -39,47 +43,78 @@
     --section-accent-text: var(--bg);
     --section-accent-hover: var(--accent-teal);
     --section-accent-link: var(--accent-teal);
-    background: var(--section-bg, var(--bg));
     color: var(--section-text, var(--text));
-    padding: 1rem 0 3rem;
+    padding: 4rem 0 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .hero-bg-image--laptop {
+    display: none;
+  }
+
+  .hero-bg-image--mobile {
+    display: block;
+  }
+
+  @media (min-width: 861px) {
+    .hero-bg-image--laptop {
+      display: block;
+    }
+
+    .hero-bg-image--mobile {
+      display: none;
+    }
+  }
+
+  .hero-compact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
   }
 
   .hero-heading {
     margin: 0;
     font-size: clamp(2.4rem, 5vw, 3.8rem);
     line-height: 1.1;
-    color: #1e293b;
-  }
-
-  .hero-after-dark {
-    font-family: "Calistro MT", serif;
-    display: inline;
-  }
-
-  .hero-studio {
-    font-family: "Ebrima", sans-serif;
-    display: inline;
-    font-weight: 400;
-  }
-
-  .hero-subheading {
-    margin: 0.75rem 0 0;
-    font-size: clamp(1rem, 2vw, 1.2rem);
-    line-height: 1.4;
-    color: var(--section-text, var(--text));
-    font-weight: 400;
+    color: #f5f0e8;
     max-width: 56ch;
+  }
+
+  .hero-after-dark,
+  .hero-studio {
+    display: none;
   }
 
   .hero-compact p {
     margin: 0.75rem 0 0;
-    color: var(--section-text, var(--text));
+    color: #f5f0e8;
     max-width: 56ch;
   }
 
   .hero-tag {
     margin-top: 0.6rem;
-    color: var(--section-text, var(--text));
+    color: #f5f0e8;
   }
 
   .hero-actions {
