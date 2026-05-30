@@ -45,9 +45,13 @@ const { id, title } = Astro.props;
   }
 
   .section > h2 {
-    margin-bottom: 0.75rem;
+    width: min(100%, var(--section-title-width, 100%));
+    margin: 0 auto 0.75rem;
+    padding-left: var(--section-title-offset, 0);
+    box-sizing: border-box;
     color: var(--section-heading, var(--heading));
     font-size: clamp(1.25rem, 2.2vw, 1.5rem);
+    text-align: var(--section-title-align, center);
   }
 
   .section :is(.button) {

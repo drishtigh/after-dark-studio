@@ -68,8 +68,8 @@
       <p class="how-it-works__ending">Two sessions mean you get a clear beginning and end: <strong>a focused process, a finished space, and no endless back-and-forth.</strong></p>
 
       <div class="how-it-works__cta card">
-        <p><strong>Ready to start?</strong> Fill in the enquiry form and I'll take it from there.</p>
-        <a class="button button--primary" href="#ready" target="_blank" rel="noreferrer">Fill in the enquiry form</a>
+        <p><strong>Ready to start?</strong> Book a free 15-minute Home Fit Call by filling a short form.</p>
+        <a class="button button--primary" href="#ready" target="_blank" rel="noreferrer">Book a free 15-minute Home Fit Call</a>
       </div>
     </div>
   </div>
@@ -87,19 +87,22 @@
     font-size: clamp(1.25rem, 2.2vw, 1.5rem);
     color: var(--section-heading, var(--heading));
     font-family: var(--font-heading);
+    text-align: center;
   }
 
   .how-it-works__intro .subheading {
-    margin: 0.5rem 0 0;
+    margin: 0.5rem auto 0;
     font-size: clamp(1rem, 2vw, 1.2rem);
     color: var(--section-text, var(--text));
     font-weight: 400;
     max-width: 60ch;
+    text-align: center;
   }
 
   .intro {
     max-width: 36rem;
-    margin-top: 0.75rem;
+    margin: 0.75rem auto 0;
+    text-align: center;
   }
 
   .steps-wrapper {
@@ -169,7 +172,7 @@
   }
 
   .step p {
-    font-size: 0.95rem;
+    font-size: clamp(1rem, 0.95rem + 0.35vw, 1.125rem);
     line-height: 1.5;
     margin-bottom: 0.5rem;
   }
@@ -182,7 +185,7 @@
   }
 
   .step li {
-    font-size: 0.9rem;
+    font-size: clamp(1rem, 0.95rem + 0.35vw, 1.125rem);
   }
 
   @media (min-width: 720px) {
@@ -271,6 +274,7 @@
   .how-it-works__ending {
     margin-top: 2rem;
     font-weight: 500;
+    text-align: center;
   }
 
   .how-it-works__cta {
@@ -280,12 +284,13 @@
     display: flex;
     align-items: center;
     gap: 2rem;
-    justify-content: space-between;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
   }
 
   .how-it-works__cta p {
     margin: 0;
-    flex: 1;
   }
 
   .how-it-works__cta .button {
@@ -295,8 +300,8 @@
   @media (max-width: 719px) {
     .how-it-works__cta {
       flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-start;
+      align-items: center;
+      justify-content: center;
     }
 
     .how-it-works__cta .button {
