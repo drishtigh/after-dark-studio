@@ -64,25 +64,27 @@ import whatIDoImage from "../assets/WhatsApp Image 2025-03-13 at 2.32.28 PM(6).j
 	<ProcessSteps />
 
 	<Section id="investment" title="Investment">
-		<div class="investment__container">
-			<p>I work with renters in two focused sessions to fix the repeat problems in your home, the chair that always collects clothes, the table that disappears under piles, the corner you never use. Most clients choose to work on their whole flat, but you can also start with a single room.</p>
+		<div class="site-shell">
+			<div class="investment__container">
+				<p>I work with renters in two focused sessions to fix the repeat problems in your home, the chair that always collects clothes, the table that disappears under piles, the corner you never use. Most clients choose to work on their whole flat, but you can also start with a single room.</p>
 
-			<div class="investment__offers">
-				<div class="offer-card">
-					<h4>My Whole Flat Feels Off</h4>
-					<p>You're not using half your space, every surface seems to collect stuff, and no room really feels "finished". You want the entire flat to feel calmer and more functional.</p>
-					<p><strong>Typical investment: around HKD 5,000</strong></p>
+				<div class="investment__offers">
+					<div class="offer-card">
+						<h4>My Whole Flat Feels Off</h4>
+						<p>You're not using half your space, every surface seems to collect stuff, and no room really feels "finished". You want the entire flat to feel calmer and more functional.</p>
+						<p><strong>Typical investment: around HKD 5,000</strong></p>
+					</div>
+					<div class="offer-card">
+						<h4>One Room Is Driving Me Mad</h4>
+						<p>Maybe it's the living room that never feels tidy, or the bedroom that doesn't feel restful. You want to get one room right first and use that as a template for the rest.</p>
+						<p><strong>Typical investment: around HKD 3,200</strong></p>
+					</div>
 				</div>
-				<div class="offer-card">
-					<h4>One Room Is Driving Me Mad</h4>
-					<p>Maybe it's the living room that never feels tidy, or the bedroom that doesn't feel restful. You want to get one room right first and use that as a template for the rest.</p>
-					<p><strong>Typical investment: around HKD 3,200</strong></p>
-				</div>
+
+				<p>Not sure which option fits? On our free 15-minute Home Fit Call, I'll recommend the right scope for your space and give you a clear quote before you decide.</p>
+
+				<p class="pricing-cta"><a class="button button--primary" href="#ready" target="_blank" rel="noreferrer">Start with a free 15-minute Home Fit Call</a></p>
 			</div>
-
-			<p>Not sure which option fits? On our free 15-minute Home Fit Call, I'll recommend the right scope for your space and give you a clear quote before you decide.</p>
-
-			<p class="pricing-cta"><a class="button button--primary" href="#ready" target="_blank" rel="noreferrer">Start with a free 15-minute Home Fit Call</a></p>
 		</div>
 	</Section>
 
@@ -213,7 +215,7 @@ import whatIDoImage from "../assets/WhatsApp Image 2025-03-13 at 2.32.28 PM(6).j
 	@media (min-width: 861px) {
 		.section#what-i-do .section__inner {
 			max-width: min(100%, 78rem);
-			padding: 0 2rem;
+			padding: 0 2rem 0 3rem;
 		}
 
 		.section#investment .section__inner {
@@ -256,7 +258,7 @@ import whatIDoImage from "../assets/WhatsApp Image 2025-03-13 at 2.32.28 PM(6).j
 		object-fit: cover;
 	}
 
-	@media (max-width: 720px) {
+	@media (max-width: 768px) {
 		#what-i-do .what-i-do__container {
 			grid-template-columns: 1fr;
 			gap: 1.5rem;
