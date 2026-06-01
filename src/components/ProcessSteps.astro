@@ -82,6 +82,13 @@
     padding: 0 6rem;
   }
 
+  @media (max-width: 719px) {
+    .how-it-works .site-shell {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
   .how-it-works__intro h2 {
     margin: 0;
     font-size: clamp(1.25rem, 2.2vw, 1.5rem);
@@ -231,6 +238,37 @@
   }
 
   @media (max-width: 719px) {
+    .how-it-works .site-shell {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .how-it-works__intro h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.5rem, 6vw, 1.75rem);
+      line-height: 1.15;
+      letter-spacing: 0.02em;
+      color: var(--section-heading, var(--heading));
+      text-align: center;
+      width: calc(100% - 2rem);
+      margin: 0 auto 0.5rem;
+      padding-left: 0;
+      padding-right: 0;
+      box-sizing: border-box;
+    }
+
+    .how-it-works__intro .subheading {
+      padding-left: 0;
+      padding-right: 0;
+      text-align: center;
+    }
+  }
+
+    .how-it-works__intro .subheading {
+      white-space: normal;
+      max-width: 100%;
+    }
+
     .steps-wrapper {
       margin-top: 1rem;
     }
@@ -239,6 +277,11 @@
       flex-direction: column;
       gap: 1.5rem;
       align-items: stretch;
+    }
+
+    ...
+  }
+
     }
 
     .step {
@@ -336,6 +379,44 @@
       width: 100%;
     }
   }
+
+    @media (min-width: 720px) {
+    .step__toggle {
+      display: block;
+      width: auto;
+      pointer-events: none;
+      cursor: default;
+    }
+
+    .step__toggle::after {
+      content: none;
+      display: none;
+    }
+
+    .step__content {
+      display: block !important;
+      text-align: left;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+      padding: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .steps {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .step {
+      min-width: 0;
+      flex: 1 1 0;
+    }
+  }
+
 </style>
 
 <script>

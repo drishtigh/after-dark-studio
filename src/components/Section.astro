@@ -63,8 +63,28 @@ const { id, title } = Astro.props;
     justify-content: center;
   }
 
-  @media (max-width: 720px) {
-    .section__inner { padding: 0 1rem; }
-    .section :is(.button) { width: auto; }
+    @media (max-width: 720px) {
+    .section__inner {
+      padding: 0 1rem;
+    }
+
+    .section > h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.5rem, 6vw, 1.75rem);
+      line-height: 1.15;
+      letter-spacing: 0.02em;
+      color: var(--section-heading, var(--heading));
+      text-align: center;
+      width: calc(100% - 2rem);
+      margin: 0 auto 1rem;
+      padding-left: 0;
+      padding-right: 0;
+      box-sizing: border-box;
+    }
+
+    .section :is(.button) {
+      width: auto;
+    }
   }
+
 </style>
