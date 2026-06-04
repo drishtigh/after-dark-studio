@@ -55,13 +55,13 @@
               <ul>
                 <li>Put furniture and storage in place</li>
                 <li>Tweak until it feels natural for how you move, sit, cook and rest</li>
-                <li>Ensure systems are realistic for your energy and habits</li>
+                <li>Make sure the space still works on busy weekdays, low-energy days, and everything in between.</li>
               </ul>
             </div>
         </div>
       </div>
 
-      <p class="how-it-works__ending">Two sessions mean you get a clear beginning and end: <strong>a focused process, a finished space, and no endless back-and-forth.</strong></p>
+      <p class="how-it-works__ending">Two sessions mean you leave with a home that feels calmer, works harder, and is easier to live in, <strong>without months of decisions or endless revisions.</strong></p>
 
       <div class="how-it-works__cta card">
         <p><strong>Ready to start?</strong> Book a free 15-minute Home Fit Call by filling a short form.</p>
@@ -430,6 +430,7 @@
       
       e.preventDefault();
       const step = toggle.closest('.step');
+      if (!step) return;
       const content = step.querySelector('.step__content');
       const isOpen = toggle.getAttribute('aria-expanded') === 'true';
       
@@ -438,15 +439,27 @@
         toggles.forEach(otherToggle => {
           if (otherToggle !== toggle) {
             otherToggle.setAttribute('aria-expanded', 'false');
-            otherToggle.closest('.step').querySelector('.step__content').classList.remove('open');
+            const otherStep = otherToggle.closest('.step');
+
+            if (otherStep) {
+              const otherContent = otherStep.querySelector('.step__content');
+
+              if (otherContent) {
+                otherContent.classList.remove('open');
+              }
+            }
           }
         });
       }
       
       // Toggle current item
-      toggle.setAttribute('aria-expanded', !isOpen);
+      toggle.setAttribute(
+      'aria-expanded',
+      (!isOpen).toString()
+      );
+      if (content) {
       content.classList.toggle('open');
-    });
+      }    });
   });
 
   // Handle window resize to reset toggles on desktop
@@ -454,7 +467,16 @@
     if (window.innerWidth >= 720) {
       toggles.forEach(toggle => {
         toggle.setAttribute('aria-expanded', 'false');
-        toggle.closest('.step').querySelector('.step__content').classList.remove('open');
+
+        const step = toggle.closest('.step');
+
+        if (step) {
+          const content = step.querySelector('.step__content');
+
+          if (content) {
+            content.classList.remove('open');
+          }
+        }
       });
     }
   });
