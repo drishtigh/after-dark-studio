@@ -582,6 +582,12 @@ main {
 		border-color 180ms ease;
 }
 
+@media (max-width: 720px) {
+	.pricing-cta .button {
+		width: auto;
+	}
+}
+
 .button:hover,
 .button:focus-visible {
 	transform: translateY(-1px);
@@ -683,6 +689,10 @@ main {
 
 .pricing-cta {
 	text-align: center;
+}
+.pricing-cta .button {
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 @media (min-width: 861px) {
