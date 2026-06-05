@@ -6,7 +6,7 @@ import studioLogoBanner from "../assets/Dark BG_Name_Website Header.png";
 
 const {
 	pageTitle = "Interior Design Studio",
-	pageDescription = "Thoughtful interiors with warmth, texture, and a clear point of view.",
+	pageDescription = "After Dark Studio helps renters in Hong Kong create homes they enjoy coming back to.",
 	headerTheme = "light",
 } = Astro.props;
 ---
@@ -15,11 +15,15 @@ const {
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<link rel="icon" type="image/svg+xml" href="src/assets/Dark BG_Logo.png" />
+		<link rel="icon" href="src/assets/Dark BG_Logo.png" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={pageDescription} />
 		<title>{pageTitle}</title>
+		<meta
+			name="description"
+			content="A focused two-session home design service for renters in Hong Kong. Improve layout, flow, and everyday living using mostly what you already own."
+		/>
 	</head>
 	<body class="site-body">
 		<header class={`site-header site-header--${headerTheme}`}>
