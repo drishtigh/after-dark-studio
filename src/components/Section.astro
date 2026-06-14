@@ -38,12 +38,12 @@ const { id, title } = Astro.props;
   }
 
   .section__inner {
-    max-width: 68ch;
+    max-width: 90ch;
     margin: 0 auto;
     display: block;
     gap: 1rem;
   }
-  
+
   .section--wide .section__inner {
     max-width: 90rem;
     padding: 0 2rem;
@@ -60,7 +60,7 @@ const { id, title } = Astro.props;
     padding-left: var(--section-title-offset, 0);
     box-sizing: border-box;
     color: var(--section-heading, var(--heading));
-    font-size: clamp(1.25rem, 2.2vw, 1.5rem);
+    font-size: clamp(2rem, 2.2vw, 1.5rem);
     text-align: var(--section-title-align, center);
   }
 
