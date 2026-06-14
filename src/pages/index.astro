@@ -7,6 +7,12 @@ import FAQAccordion from "../components/FAQAccordion.astro";
 import CTAForm from "../components/CTAForm.astro";
 import aboutPortrait from "../assets/Image_20260509161325_9_79.jpg";
 import whatIDoImage from "../assets/WhatsApp Image 2025-03-13 at 2.32.28 PM(6).jpeg";
+import mitsumiBefore from "../assets/mitsumiBefore.jpeg";
+import mitsumiAfter from "../assets/mitsumiAfter.jpeg";
+import mitsumiLounge from "../assets/mitsumiLounge.jpeg";
+import mitsumiPoster from "../assets/mitsumiPosters.jpeg";
+import mitsumiPassage from "../assets/mitsumiPassage.jpeg";
+import BeforeAfterSlider from "../components/BeforeAfterSlider.jsx";
 ---
 
 <Layout
@@ -97,35 +103,55 @@ import whatIDoImage from "../assets/WhatsApp Image 2025-03-13 at 2.32.28 PM(6).j
     <div class="results__intro">
       <p>Small changes. A big difference in how the space feels to live in.</p>
     </div>
+<div class="results__featured">
 
-    <div class="results__card card">
+	<div class="results__slider">
+		<BeforeAfterSlider
+			client:load
+			before={mitsumiBefore.src}
+			after={mitsumiAfter.src}
+		/>
+	</div>
 
-      <h3>Studio Apartment, Hong Kong</h3>
+	<div class="results__story">
 
-			<p>
-		<strong>Challenge:</strong>
-		Wanted somewhere to unwind after work, display personal items,
-		and comfortably invite friends over.
+		<h3>Studio Apartment, Hong Kong</h3>
+
+		<p>
+			<strong>Challenge:</strong>
+			Mitsumi wanted her studio to do more than provide a place to sleep and work. 
+			She wanted somewhere to unwind after coming home, display the things she cared 
+			about, and comfortably invite friends over.
+
 		</p>
 
 		<p>
-		<strong>Result:</strong>
-		The same studio now supports relaxing, hosting,
-		working, and displaying the things she cares about.
+			<strong>Result:</strong>
+			By rethinking the furniture layout, adding renter-friendly storage, 
+			and introducing layered lighting, the same studio now supports relaxing, hosting, 
+			displaying personal items, and working without feeling crowded.
+
 		</p>
 
-      <div class="results__quote">
-        <blockquote>
-          "I definitely feel like I'm making the best use of my space right now.
-          I have multiple comfortable places to relax, and I can easily have
-          friends over without worrying about space."
-        </blockquote>
+		<div class="results__quote">
+			<blockquote>
+				"I definitely feel like I'm making the best use of my space right now. I have multiple comfortable places to relax, and I can easily have friends over without worrying about space." 
+			</blockquote>
 
-        <p>— Mitsumi, Hong Kong</p>
-      </div>
+			<p>— Mitsumi, Hong Kong</p>
+		</div>
+
+		<div class="results__gallery">
+	<img src={mitsumiLounge.src} alt="Relaxing area" />
+	<img src={mitsumiPoster.src} alt="Intentional display" />
+	<img src={mitsumiPassage.src} alt="Improved flow" />
+</div>
+	</div>
+
+</div>
 
       <h3 class="results__feedback-heading">
-        More Client Stories
+        More Client Results
       </h3>
 
       <div class="results__quote">
@@ -394,7 +420,7 @@ import whatIDoImage from "../assets/WhatsApp Image 2025-03-13 at 2.32.28 PM(6).j
 	}
 
 	#results .section__inner {
-	max-width: 55rem;
+	max-width: 90rem;
 	}
 
 	.results__container {
@@ -439,6 +465,59 @@ import whatIDoImage from "../assets/WhatsApp Image 2025-03-13 at 2.32.28 PM(6).j
 
 	.results__feedback-heading {
     margin-top: 2.5rem;
+	}
+
+	.results__featured {
+	display: grid;
+	grid-template-columns: 1.4fr 1fr;
+	gap: 3rem;
+	align-items: start;
+	}
+
+	.results__slider {
+		border-radius: 16px;
+		overflow: hidden;
+	}
+
+	.results__story {
+		display: grid;
+		gap: 1rem;
+	}
+
+	@media (max-width: 768px) {
+
+	.results__featured {
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
+	}
+
+	.results__slider {
+		order: -1;
+	}
+	}
+		.results__gallery {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 0.75rem;
+		margin-top: 1.5rem;
+	}
+
+	.results__gallery img {
+		width: 100%;
+		aspect-ratio: 1;
+		object-fit: cover;
+		border-radius: 12px;
+	}
+
+	@media (max-width: 768px) {
+		.results__gallery {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	.section#results .section__inner {
+	max-width: min(100%, 78rem);
+	padding: 0 2rem;
 	}
 
 	.about-section {
@@ -585,5 +664,15 @@ import whatIDoImage from "../assets/WhatsApp Image 2025-03-13 at 2.32.28 PM(6).j
 			object-fit: cover;
 			border-radius: var(--radius-lg);
 		}
+	}
+
+		#results .section__inner {
+		max-width: none !important;
+		width: 100% !important;
+	}
+
+	#results .results__card {
+		max-width: none !important;
+		width: 100% !important;
 	}
 </style>

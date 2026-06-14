@@ -3,8 +3,13 @@ const { id, title } = Astro.props;
 
 ---
 
-<section id={id} class="section">
-  {title && <h2>{title}</h2>}
+<section
+	id={id}
+	class:list={[
+		"section",
+		id === "results" && "section--wide"
+	]}
+>  {title && <h2>{title}</h2>}
   <div class="section__inner">
     <slot />
   </div>
@@ -37,6 +42,11 @@ const { id, title } = Astro.props;
     margin: 0 auto;
     display: block;
     gap: 1rem;
+  }
+  
+  .section--wide .section__inner {
+    max-width: 90rem;
+    padding: 0 2rem;
   }
 
   .section__inner > .what-i-do__container {
