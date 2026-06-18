@@ -26,6 +26,8 @@
 	--radius-xl: 32px;
 	--radius-lg: 24px;
 	--radius-md: 18px;
+	--measure: 72ch;
+	--leading: 1.8;
 }
 
 @font-face {
@@ -890,7 +892,26 @@ main {
 	}
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
 
+.site-main {
+  width: 100%;
+  overflow-x: visible;
+  position: relative;
+}
+
+.site-main {
+  width: 100%;
+  max-width: 100%;
+}
+.site-main > * {
+  min-width: 0;
+}
 /* Ensure body text and headings use the design tokens so text appears darker by default */
 body { color: var(--text); }
 

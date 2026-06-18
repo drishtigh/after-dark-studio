@@ -3,7 +3,6 @@ import "../styles/global.css";
 import studioLogoSmall from "../assets/Dark BG_Logo.png";
 import studioLogoBanner from "../assets/Dark BG_Name_Website Header.png";
 
-
 const {
 	pageTitle = "Interior Design Studio",
 	pageDescription = "After Dark Studio helps renters in Hong Kong create homes they enjoy coming back to.",
@@ -15,8 +14,8 @@ const {
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="icon" type="image/svg+xml" href="public\favicon.png" />
-		<link rel="icon" href="public\favicon.png" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<link rel="icon" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={pageDescription} />
 		<title>{pageTitle}</title>
@@ -44,7 +43,7 @@ const {
 			</div>
 		</header>
 
-		<main>
+		<main class="site-main">
 			<slot />
 		</main>
 

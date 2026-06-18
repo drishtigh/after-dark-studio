@@ -1,0 +1,124 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const posts = import.meta.glob("../../content/blog/*.mdx", {
+    eager: true,
+  });
+
+  return Object.entries(posts).map(([path, post]: any) => {
+    const slug = path.split("/").pop().replace(".mdx", "");
+
+    return {
+      params: { slug },
+      props: { post },
+    };
+  });
+}
+
+const { post } = Astro.props;
+
+const data = post?.data ?? post?.frontmatter;
+---
+
+<Layout
+  pageTitle={data?.title ?? "Untitled"}
+  pageDescription={data?.description ?? ""}
+>
+  <article class="blog-post">
+    <header>
+      <h1>{data?.title}</h1>
+      <p>{data?.date}</p>
+    </header>
+
+    {post.Content && <post.Content />}
+  </article>
+</Layout>
+
+<style>
+.blog-post {
+  max-width: 720px;
+  margin: 4rem auto;
+  padding: 0 1.25rem;
+
+  font-family: var(--font-body);
+  color: var(--text);
+  line-height: 1.75;
+}
+
+/* =========================
+   TYPOGRAPHY SYSTEM
+========================= */
+
+.blog-post :global(h1),
+.blog-post :global(h2),
+.blog-post :global(h3) {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+}
+
+.blog-post :global(p),
+.blog-post :global(li),
+.blog-post :global(blockquote) {
+  max-width: 65ch;
+}
+
+/* paragraph rhythm */
+.blog-post :global(p) {
+  margin: 1rem 0;
+}
+
+/* heading spacing = editorial structure */
+.blog-post :global(h2) {
+  margin-top: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.blog-post :global(h3) {
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* small pause after headings */
+.blog-post :global(h2 + p) {
+  margin-top: 0.5rem;
+}
+
+/* =========================
+   IMAGES (RHYTHM ONLY)
+   NOTE: NO WIDTH HERE
+   (geometry belongs in BlogImage)
+========================= */
+
+.blog-post :global(.blog-image) {
+  margin: 2.5rem 0;
+}
+
+.blog-post :global(.blog-image--full) {
+  margin: 4.5rem 0;
+}
+
+.blog-post :global(.blog-image--hero) {
+  margin: 0 0 4.5rem 0;
+}
+
+/* =========================
+   BLOCKQUOTES
+========================= */
+
+.blog-post :global(blockquote) {
+  border-left: 3px solid var(--accent-1);
+  padding-left: 1rem;
+  opacity: 0.85;
+  font-style: italic;
+}
+
+/* =========================
+   OTHER ELEMENTS
+========================= */
+
+.blog-post :global(hr) {
+  margin: 3rem 0;
+  opacity: 0.2;
+}
+</style>

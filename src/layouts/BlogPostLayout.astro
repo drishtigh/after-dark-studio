@@ -1,0 +1,83 @@
+---
+import Layout from "./Layout.astro";
+
+const { title, description, date } = Astro.props;
+---
+
+<Layout pageTitle={title} pageDescription={description}>
+  <article class="blog">
+    <header class="blog__header">
+      <h1>{title}</h1>
+      <p class="meta">{date}</p>
+    </header>
+
+    <div class="blog__content">
+      <slot />
+    </div>
+  </article>
+</Layout>
+
+<style>
+.blog {
+  max-width: 72ch;
+  margin: 5rem auto;
+  padding: 0 1.5rem;
+}
+
+/* HEADER */
+.blog__header {
+  margin-bottom: 3rem;
+}
+
+.blog__header h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.meta {
+  margin-top: 1rem;
+  opacity: 0.6;
+  font-size: 0.95rem;
+}
+
+/* BODY TYPOGRAPHY SYSTEM */
+.blog__content :global(p) {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin: 1.2rem 0;
+  color: var(--text);
+}
+
+.blog__content :global(h2) {
+  font-family: var(--font-heading);
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+}
+
+.blog__content :global(h3) {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+}
+
+.blog__content :global(img) {
+  width: 100%;
+  border-radius: 14px;
+  margin: 2.5rem 0;
+}
+
+.blog__content :global(blockquote) {
+  border-left: 2px solid var(--accent-1);
+  padding-left: 1.2rem;
+  margin: 2rem 0;
+  opacity: 0.85;
+  font-style: italic;
+}
+
+/* CONTROL RHYTHM */
+.blog__content :global(p + p) {
+  margin-top: 1rem;
+}
+</style>

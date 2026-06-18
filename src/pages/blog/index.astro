@@ -1,0 +1,55 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const posts = import.meta.glob("../../content/blog/*.mdx", { eager: true });
+
+const postList = Object.entries(posts)
+  .map(([path, post]: any) => {
+    const slug = path.split("/").pop().replace(".mdx", "");
+
+    const data = post.data ?? post.frontmatter;
+
+    if (!data) return null;
+
+    return {
+      ...data,
+      slug,
+    };
+  })
+  .filter(Boolean);
+
+function formatDate(date: string) {
+  if (!date) return "No date";
+
+  const d = new Date(date);
+  if (isNaN(d.getTime())) return "Invalid date";
+
+  return d.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+---
+
+<Layout
+  pageTitle="Blog | After Dark Studio"
+  pageDescription="Essays on rental living, small-space design, and how homes shape everyday life."
+>
+  <section class="page-card card">
+    <span class="pill">Blog</span>
+    <h1>Ideas, essays, and spatial thinking</h1>
+    <p>
+      Notes on rental living, behaviour-based design, and how small spaces actually work in real life.
+    </p>
+  </section>
+
+  <section class="blog-list">
+    {postList.map((post: any) => (
+      <a class="blog-card" href={`/blog/${post.slug}/`}>
+        <h2>{post.title}</h2>
+        <p class="meta">{formatDate(post.date)}</p>
+      </a>
+    ))}
+  </section>
+</Layout>

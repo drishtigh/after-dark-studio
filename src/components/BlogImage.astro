@@ -1,0 +1,80 @@
+---
+const {
+  src,
+  alt = "",
+  caption,
+  layout = "inline" // inline | full | hero
+} = Astro.props;
+---
+
+<figure class={`blog-image blog-image--${layout}`}>
+  <img src={src} alt={alt} loading="lazy" />
+
+  {caption && (
+    <figcaption class="caption">
+      {caption}
+    </figcaption>
+  )}
+</figure>
+
+<style>
+.blog-image {
+  margin: 2.5rem 0;
+}
+
+.blog-image img {
+  width: 100%;
+  display: block;
+}
+
+/* INLINE */
+.blog-image--inline {
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+.blog-image--inline img {
+  border-radius: 12px;
+}
+
+/* FULL + HERO (FIXED SYSTEM) */
+.blog-image--full,
+.blog-image--hero {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* HERO ONLY */
+.blog-image--hero {
+  overflow: hidden;
+}
+
+.blog-image--hero img {
+  height: 75vh;
+  object-fit: cover;
+  transform: scale(1.02);
+}
+
+/* CAPTION */
+.caption {
+  max-width: 65ch;
+  margin: 0.75rem auto 0;
+  padding: 0 1.25rem;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  font-style: italic;
+}
+.blog-post :global(.blog-image) {
+  margin: 2.5rem 0;
+}
+
+.blog-post :global(.blog-image--full) {
+  margin: 5rem 0;
+}
+
+.blog-post :global(.blog-image--hero) {
+  margin: 0 0 6rem;
+}
+</style>
