@@ -44,10 +44,11 @@ function formatDate(date: string) {
     </p>
   </section>
 
-  <section class="blog-list">
+  <section class="section blog-list">
     {postList.map((post: any) => (
       <a class="blog-card" href={`/blog/${post.slug}/`}>
         <h2>{post.title}</h2>
+        <p class="excerpt">{post.excerpt}</p>
         <p class="meta">{formatDate(post.date)}</p>
       </a>
     ))}
@@ -61,5 +62,25 @@ function formatDate(date: string) {
 
 .blog-card:hover h2 {
   text-decoration: underline;
+}
+.blog-list {
+  display: grid;
+  gap: 1.5rem;
+  padding: 0 2rem;
+}.page-card 
+{
+  max-width: 720px;
+  margin: 4rem auto;
+  padding: 0 1.25rem;
+
+  font-family: var(--font-body);
+  color: var(--text);
+  line-height: 1.75;
+}
+.excerpt {
+  margin: 0.3rem 0 0.6rem;
+  color: rgba(31, 41, 51, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 </style>
