@@ -6,7 +6,6 @@ const posts = import.meta.glob("../../content/blog/*.mdx", { eager: true });
 const postList = Object.entries(posts)
   .map(([path, post]: any) => {
     const slug = path.split("/").pop().replace(".mdx", "");
-
     const data = post.data ?? post.frontmatter;
 
     if (!data) return null;
@@ -16,7 +15,13 @@ const postList = Object.entries(posts)
       slug,
     };
   })
-  .filter(Boolean);
+  .filter(Boolean)
+  .sort((a: any, b: any) => {
+    const dateA = new Date(a.date || 0).getTime();
+    const dateB = new Date(b.date || 0).getTime();
+
+    return dateB - dateA; // newest first
+  });
 
 function formatDate(date: string) {
   if (!date) return "No date";
