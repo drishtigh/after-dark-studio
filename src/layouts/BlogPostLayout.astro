@@ -1,16 +1,11 @@
 ---
 import Layout from "./Layout.astro";
 
-const { title, description, date } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <Layout pageTitle={title} pageDescription={description}>
   <article class="blog">
-    <header class="blog__header">
-      <h1>{title}</h1>
-      <p class="meta">{date}</p>
-    </header>
-
     <div class="blog__content">
       <slot />
     </div>
