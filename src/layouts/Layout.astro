@@ -9,6 +9,7 @@ const {
 	headerTheme = "light",
 } = Astro.props;
 ---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -19,18 +20,46 @@ const {
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={pageDescription} />
 		<title>{pageTitle}</title>
+
+		<!-- Organization structured data -->
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "Organization",
+			"name": "After Dark Studio",
+			"url": "https://afterdarkstudiohk.com",
+			"founder": {
+				"@type": "Person",
+				"name": "Drishti Chauhan"
+			},
+			"sameAs": [
+				"https://www.instagram.com/afterdarkstudiohk",
+				"https://www.pinterest.com/afterdarkstudiohk/",
+				"https://www.youtube.com/@Afterdarkstudiohk"
+			]
+		})} />
 	</head>
+
 	<body class="site-body">
 		<header class={`site-header site-header--${headerTheme}`}>
 			<div class="site-shell site-header__inner">
 				<a class="brand" href="/" aria-label="Home">
-					<img class="brand__mark brand__mark--mobile" src={studioLogoSmall.src} alt="After Dark Studio logo" width="48" height="48" />
-					<img class="brand__mark brand__mark--desktop" src={studioLogoBanner.src} alt="After Dark Studio" />
+					<img
+						class="brand__mark brand__mark--mobile"
+						src={studioLogoSmall.src}
+						alt="After Dark Studio logo"
+						width="48"
+						height="48"
+					/>
+					<img
+						class="brand__mark brand__mark--desktop"
+						src={studioLogoBanner.src}
+						alt="After Dark Studio"
+					/>
 				</a>
 
 				<nav class="site-nav" aria-label="Primary">
-				<a href="/blog">Blog</a>
-				<!-- <a href="/projects">Projects</a> -->
+					<a href="/blog">Blog</a>
+					<!-- <a href="/projects">Projects</a> -->
 				</nav>
 
 				<a href="/#ready" class="header-cta">Contact</a>
@@ -45,17 +74,49 @@ const {
 
 		<footer class="site-footer">
 			<div class="site-shell site-footer__inner">
-				<nav class="site-footer__nav">
+
+				<nav class="site-footer__nav" aria-label="Footer">
 					<a href="/">Home</a>
-					<a href="/projects">Projects</a>
 					<a href="/blog">Blog</a>
-					<a href="#ready">Enquiry form</a>
+					<a href="/#ready">Enquiry form</a>
 				</nav>
+
+				<nav class="site-footer__social" aria-label="Social media">
+					<a
+						href="https://www.instagram.com/afterdarkstudiohk"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="Instagram"
+					>
+						Instagram
+					</a>
+
+					<a
+						href="https://www.pinterest.com/afterdarkstudiohk/"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="Pinterest"
+					>
+						Pinterest
+					</a>
+
+					<a
+						href="https://www.youtube.com/@Afterdarkstudiohk"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="YouTube"
+					>
+						YouTube
+					</a>
+				</nav>
+
 				<p>© {new Date().getFullYear()} After Dark Studio — All rights reserved.</p>
+
 			</div>
 		</footer>
 	</body>
 </html>
+
 <style>
 .site-nav {
   display: flex;
@@ -65,4 +126,4 @@ const {
 .site-nav a:first-child {
   margin-left: auto;
 }
-	</style>
+</style>
